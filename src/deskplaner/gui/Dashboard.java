@@ -1,5 +1,6 @@
 package deskplaner.gui;
 
+import deskplaner.util.Console;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
@@ -14,6 +15,7 @@ public class Dashboard {
 		scene = new Scene(stackpane);
 		
 		Button button = new Button("Button");
+		button.setOnAction(e -> new Console());
 		stackpane.getChildren().add(button);
 		
 	}

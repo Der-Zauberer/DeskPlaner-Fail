@@ -18,6 +18,8 @@ public class Main extends Application{
 		Main.setStage(stage);
 		new Dashboard();
 		Main.stage.setScene(Dashboard.getScene());
+		Main.stage.setHeight(720);
+		Main.stage.setWidth(1280);
 		Main.stage.show();
 		
 	}
