@@ -1,6 +1,6 @@
 package deskplaner.util;
 
-public class Programm {
+public class Program {
 
 	private static String name = "default";
 	private static int version = 1;
@@ -15,7 +15,7 @@ public class Programm {
 	}
 
 	public static void setName(String name) {
-		Programm.name = name;
+		Program.name = name;
 	}
 
 	public static int getVersion() {
@@ -23,7 +23,7 @@ public class Programm {
 	}
 
 	public static void setVersion(int version) {
-		Programm.version = version;
+		Program.version = version;
 	}
 
 	public static String getDatum() {
@@ -31,7 +31,7 @@ public class Programm {
 	}
 
 	public static void setDatum(String datum) {
-		Programm.datum = datum;
+		Program.datum = datum;
 	}
 
 	public static String getAuthor() {
@@ -39,7 +39,7 @@ public class Programm {
 	}
 
 	public static void setAuthor(String author) {
-		Programm.author = author;
+		Program.author = author;
 	}
 
 	public static String getWebsite() {
@@ -47,7 +47,7 @@ public class Programm {
 	}
 
 	public static void setWebsite(String website) {
-		Programm.website = website;
+		Program.website = website;
 	}
 
 	public static String getDescription() {
@@ -55,7 +55,7 @@ public class Programm {
 	}
 
 	public static void setDescription(String description) {
-		Programm.description = description;
+		Program.description = description;
 	}
 
 	public static String getIconpath() {
@@ -63,7 +63,7 @@ public class Programm {
 	}
 
 	public static void setIconpath(String iconpath) {
-		Programm.iconpath = iconpath;
+		Program.iconpath = iconpath;
 	}
 
 }
