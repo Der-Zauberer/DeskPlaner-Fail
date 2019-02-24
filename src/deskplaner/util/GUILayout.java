@@ -2,6 +2,7 @@ package deskplaner.util;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 
 public class GUILayout {
@@ -29,6 +30,11 @@ public class GUILayout {
 		stackpane.setAlignment(Pos.TOP_LEFT);
 		stackpane.getChildren().addAll(menu, content);
 		
+	}
+	
+	public void setTitle(String title) {
+		Label label = new Label(title);
+		content.getChildren().add(label);
 	}
 	
 	public StackPane getMenu() {
