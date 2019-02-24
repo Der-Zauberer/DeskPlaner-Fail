@@ -16,8 +16,10 @@ public class Main extends Application{
 	public void start(Stage stage) throws Exception {
 
 		Main.setStage(stage);
-		new Dashboard();
-		Main.stage.setScene(Dashboard.getScene());
+		
+		Dashboard dashboard = new Dashboard();
+		
+		Main.stage.setScene(dashboard.getScene());
 		Main.stage.setHeight(720);
 		Main.stage.setWidth(1280);
 		Main.stage.show();
