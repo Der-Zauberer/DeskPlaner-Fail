@@ -1,6 +1,5 @@
 package deskplaner.util;
 
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Program {
@@ -96,10 +95,6 @@ public class Program {
 		stage.setHeight(height);
 		stage.setWidth(witdh);
 		stage.setMaximized(maximized);
-	}
-	
-	public static void setStylesheet(Scene scene) {
-		scene.getStylesheets().add(scene.getClass().getResource(stylepath).toExternalForm());
 	}
 
 }

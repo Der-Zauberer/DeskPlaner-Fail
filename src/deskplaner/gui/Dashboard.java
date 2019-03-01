@@ -10,10 +10,18 @@ public class Dashboard extends GUILayout{
 	public Dashboard() {
 		
 		Button button = new Button("Button");
+		button.setTranslateY(100);
 		button.setOnAction(e -> new Console());
 		getContent().getChildren().add(button);
 		
-		//Program.setStylesheet(getScene());
+		setTitle("Dashboard");
+		
+		addMenuItem("Dashboard", e -> new Console());
+		addMenuItem("Dashboard", e -> new Console());
+		addMenuItem("Dashboard", e -> new Console());
+		addMenuItem("Dashboard", e -> new Console());
+		addMenuItem("Dashboard", e -> new Console());
+		addMenuItem("Dashboard", e -> new Console());
 		
 		getScene().getStylesheets().add(getClass().getResource(Program.getStylePath()).toExternalForm());
 		

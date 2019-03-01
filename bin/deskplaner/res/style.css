@@ -1,3 +1,18 @@
 .root{
 	-fx-background-color: white;
 }
+
+#menu #menuitem{
+	-fx-background-color: transparent;
+	-fx-background-radius: 0;
+	-fx-font-size: 17px;
+	-fx-padding: 0 40px 0 40px;
+}
+
+#menu #menuitem:hover{
+	-fx-background-color: #e6e6e6e6
+}
+
+#content{
+	-fx-padding: 40px;
+}

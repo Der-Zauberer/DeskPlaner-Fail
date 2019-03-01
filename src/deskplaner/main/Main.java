@@ -18,16 +18,18 @@ public class Main extends Application{
 
 		Main.stage = stage;
 		
+		System.setProperty("prism.lcdtext", "false");
+		
 		Program.setName("DeskPlaner");
 		Program.setVersion(0.1);
 		Program.setAuthor("André Sommer");
 		Program.setStylePath("/deskplaner/res/style.css");
 		
-		Dashboard dashboard = new Dashboard();
+		new Dashboard();
 		
 		Program.configurateStage(stage);
 		
-		Main.stage.setScene(dashboard.getScene());
+		Main.stage.setScene(Dashboard.getScene());
 		Main.stage.show();
 		
 	}
