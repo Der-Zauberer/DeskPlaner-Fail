@@ -37,7 +37,7 @@ public class GUILayout {
 		Label lbTitle = new Label(Program.getName());
 		lbTitle.setTranslateX(40);
 		lbTitle.setTranslateY(40);
-		lbTitle.setStyle("-fx-font-size: 30px;");
+		lbTitle.setStyle("-fx-font-size: 30px; -fx-text-fill: #ffffff;");
 		menu.getChildren().add(lbTitle);
 		
 		stackpane.setAlignment(Pos.TOP_LEFT);

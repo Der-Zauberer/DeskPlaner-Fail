@@ -2,15 +2,24 @@
 	-fx-background-color: white;
 }
 
+#menu{
+	-fx-background-color: #0072e6;
+}
+
+#content{
+	-fx-background-color: #ffffff;
+}
+
 #menu #menuitem{
 	-fx-background-color: transparent;
+	-fx-text-fill: #ffffff;
 	-fx-background-radius: 0;
 	-fx-font-size: 17px;
 	-fx-padding: 0 40px 0 40px;
 }
 
 #menu #menuitem:hover{
-	-fx-background-color: #e6e6e6e6
+	-fx-background-color: rgba(0, 0, 0, 0.1);
 }
 
 #content{
