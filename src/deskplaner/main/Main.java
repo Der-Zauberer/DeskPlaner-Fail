@@ -8,11 +8,19 @@ import javafx.stage.Stage;
 public class Main extends Application{
 	
 	private static Stage stage;
-
+	
+	/**
+	 * Start the JavaFX application.
+	 * 
+	 * @param args are unused
+	 */
 	public static void main(String[] args) {
 		launch();
 	}
 
+	/**
+	 * All main actions are in this method.
+	 */
 	@Override
 	public void start(Stage stage) throws Exception {
 
@@ -34,6 +42,12 @@ public class Main extends Application{
 		
 	}
 
+	
+	/**
+	 * Returns the Stage of the application. 
+	 * 
+	 * @return The Stage of the application.
+	 */
 	public static Stage getStage() {
 		return stage;
 	}

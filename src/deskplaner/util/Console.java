@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class Console {
+public class Console extends Stage {
 
 	public Console() {
 

@@ -6,7 +6,7 @@ public class Program {
 
 	private static String name = "default";
 	private static double version = 1;
-	private static String datum;
+	private static String date;
 	private static String author;
 	private static String website;
 	private static String description;
@@ -30,11 +30,11 @@ public class Program {
 	}
 
 	public static String getDatum() {
-		return datum;
+		return date;
 	}
 
-	public static void setDatum(String datum) {
-		Program.datum = datum;
+	public static void setDatum(String date) {
+		Program.date = date;
 	}
 
 	public static String getAuthor() {
