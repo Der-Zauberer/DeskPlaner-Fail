@@ -37,5 +37,9 @@ public class Main extends Application{
 	public static Stage getStage() {
 		return stage;
 	}
+	
+	public void exit() {
+		System.exit(0);
+	}
 
 }

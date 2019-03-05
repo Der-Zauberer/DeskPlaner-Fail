@@ -1,5 +1,6 @@
 package deskplaner.util;
 
+import deskplaner.main.Main;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -15,6 +16,7 @@ public class GUILayout {
 	private StackPane menu, content;
 	
 	private static int countMenuItems = 0;
+	private static int countMenuBottomItems = 0;
 
 	public GUILayout() {
 		
@@ -61,6 +63,27 @@ public class GUILayout {
 		button.setTranslateY(120 + countMenuItems * 40);
 		button.setOnAction(event);
 		button.setId("menuitem");
+		menu.getChildren().add(button);
+		countMenuItems++;
+	}
+	
+	public void addMenuItem(String title, EventHandler<ActionEvent> event, boolean bottom) {
+		Button button = new Button(title);
+		button.setPrefHeight(40);
+		button.setPrefWidth(250);
+		button.setAlignment(Pos.CENTER_LEFT);
+		button.setTranslateY(120 + countMenuItems * 40);
+		button.setOnAction(event);
+		button.setId("menuitem");
+		if(bottom) {
+			button.setTranslateY(935 - countMenuBottomItems * 40);
+			countMenuBottomItems++;
+			countMenuItems--;
+			int itemnumber = countMenuBottomItems;
+			Main.getStage().heightProperty().addListener((obs, oldVal, newVal) -> {
+				button.setTranslateY((Main.getStage().getHeight() - 80) - itemnumber * 40);
+			});
+		}
 		menu.getChildren().add(button);
 		countMenuItems++;
 	}

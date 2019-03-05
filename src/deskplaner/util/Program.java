@@ -81,6 +81,8 @@ public class Program {
 		stage.setTitle(name);
 		stage.setHeight(720);
 		stage.setWidth(1280);
+		stage.setMinHeight(720);
+		stage.setMinWidth(1280);
 		stage.setMaximized(true);
 	}
 	
@@ -88,12 +90,16 @@ public class Program {
 		stage.setTitle(name);
 		stage.setHeight(height);
 		stage.setWidth(witdh);
+		stage.setMinHeight(720);
+		stage.setMinWidth(1280);
 	}
 	
 	public static void configurateStage(Stage stage, double height, double witdh, boolean maximized) {
 		stage.setTitle(name);
 		stage.setHeight(height);
 		stage.setWidth(witdh);
+		stage.setMinHeight(720);
+		stage.setMinWidth(1280);
 		stage.setMaximized(maximized);
 	}
 
