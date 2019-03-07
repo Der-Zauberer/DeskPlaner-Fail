@@ -52,7 +52,7 @@ public class GUILayout {
 	public void setTitle(String title) {
 		Label label = new Label(title);
 		label.setStyle("-fx-font-size: 40px;");
-		content.getChildren().add(label);
+		content.add(label, 0, 0);
 	}
 
 	/**
