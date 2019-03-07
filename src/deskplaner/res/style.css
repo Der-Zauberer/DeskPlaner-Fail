@@ -10,6 +10,14 @@
 	-fx-background-color: #ffffff;
 }
 
+#menu #menutitle{
+	-fx-background-color: transparent;
+	-fx-text-fill: #ffffff;
+	-fx-background-radius: 0;
+	-fx-font-size: 30px;
+	-fx-padding: 40px 40px 40px 40px;
+}
+
 #menu #menuitem{
 	-fx-background-color: transparent;
 	-fx-text-fill: #ffffff;
@@ -24,4 +32,12 @@
 
 #content{
 	-fx-padding: 40px;
+}
+
+#window{
+	-fx-background-color: #e6e6e6;
+}
+
+#window Button{
+	-fx-background-color: transparent;
 }
