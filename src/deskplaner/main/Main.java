@@ -42,7 +42,8 @@ public class Main extends Application {
 
 		Program.configurateStage(stage);
 
-		Main.stage.setScene(dashboard.getScene());
+		Main.stage.setScene(dashboard.getScene()
+				);
 		Main.stage.show();
 
 	}
