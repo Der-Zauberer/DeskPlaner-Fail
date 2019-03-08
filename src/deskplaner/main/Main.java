@@ -1,6 +1,7 @@
 package deskplaner.main;
 
 import deskplaner.gui.Dashboard;
+import deskplaner.gui.Notes;
 import deskplaner.util.Program;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -17,6 +18,9 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch();
 	}
+	
+	public static Dashboard dashboard;
+	public static Notes notes;
 
 	/**
 	 * All main actions are in this method.
@@ -33,11 +37,12 @@ public class Main extends Application {
 		Program.setAuthor("André Sommer");
 		Program.setStylePath("/deskplaner/res/style.css");
 
-		new Dashboard();
+		dashboard = new Dashboard();
+		notes = new Notes();
 
 		Program.configurateStage(stage);
 
-		Main.stage.setScene(Dashboard.getScene());
+		Main.stage.setScene(dashboard.getScene());
 		Main.stage.show();
 
 	}

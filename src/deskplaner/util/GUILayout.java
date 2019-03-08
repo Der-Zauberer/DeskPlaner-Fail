@@ -13,11 +13,11 @@ import javafx.scene.layout.HBox;
 public class GUILayout {
 
 	private HBox hbox;
-	private static Scene scene;
+	private Scene scene;
 	private GridPane menu, content;
 
-	private static int countMenuItems = 0;
-	private static int countMenuBottomItems = 0;
+	private int countMenuItems = 0;
+	private int countMenuBottomItems = 0;
 
 	/**
 	 * Create a scene and two stackpanes with menu and content area.
@@ -123,7 +123,7 @@ public class GUILayout {
 	 * 
 	 * @return Returns the scene.
 	 */
-	public static Scene getScene() {
+	public Scene getScene() {
 		return scene;
 	}
 
