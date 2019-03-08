@@ -10,6 +10,10 @@
 	-fx-background-color: #ffffff;
 }
 
+#content Label{
+	-fx-text-fill: #000000;
+}
+
 #menu #menutitle{
 	-fx-background-color: transparent;
 	-fx-text-fill: #ffffff;
@@ -40,4 +44,20 @@
 
 #window Button{
 	-fx-background-color: transparent;
+}
+
+#widget{
+	-fx-background-color: rgba(0, 0, 0, 0.1);
+	-fx-background-radius: 20px;
+	-fx-padding: 20px;
+}
+
+#widget{
+	-fx-background-color: rgba(0, 0, 0, 0.1);
+	-fx-background-radius: 20px;
+	-fx-padding: 10px 20px;
+}
+
+#widget:hover{
+	-fx-background-color: rgba(0, 0, 0, 0.2);
 }

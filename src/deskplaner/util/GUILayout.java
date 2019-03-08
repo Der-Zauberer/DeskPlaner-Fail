@@ -16,6 +16,8 @@ public class GUILayout {
 	private Scene scene;
 	private GridPane menu, content;
 
+	private Label lbContent;
+
 	private int countMenuItems = 0;
 	private int countMenuBottomItems = 0;
 
@@ -23,7 +25,6 @@ public class GUILayout {
 	 * Create a scene and two stackpanes with menu and content area.
 	 */
 	public GUILayout() {
-
 		hbox = new HBox();
 		scene = new Scene(hbox);
 
@@ -34,14 +35,27 @@ public class GUILayout {
 		content = new GridPane();
 		content.setAlignment(Pos.TOP_LEFT);
 		content.setId("content");
+		content.setHgap(20);
+		content.setVgap(20);
 
 		Label lbTitle = new Label(Program.getName());
 		lbTitle.setId("menutitle");
 		menu.add(lbTitle, 0, 0);
 
+		lbContent = new Label();
+		lbContent.setText("Default");
+		lbContent.setStyle("-fx-font-size: 40px;");
+		content.add(lbContent, 0, 0);
+		
+		GridPane.setColumnSpan(lbContent, 2);
+
 		hbox.setAlignment(Pos.TOP_LEFT);
 		hbox.getChildren().addAll(menu, content);
-
+	}
+	
+	public GUILayout(String title) {
+		this();
+		lbContent.setText(title);
 	}
 
 	/**
@@ -50,9 +64,7 @@ public class GUILayout {
 	 * @param title Set the title of the content area.
 	 */
 	public void setTitle(String title) {
-		Label label = new Label(title);
-		label.setStyle("-fx-font-size: 40px;");
-		content.add(label, 0, 0);
+		lbContent.setText(title);
 	}
 
 	/**

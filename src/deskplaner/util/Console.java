@@ -13,16 +13,15 @@ import javafx.stage.Stage;
 public class Console extends Stage {
 
 	public Console() {
-
+		super();
 		StackPane root = new StackPane();
 		Scene scene = new Scene(root);
-		Stage stage = new Stage();
 
-		stage.setHeight(480);
-		stage.setWidth(640);
+		this.setHeight(480);
+		this.setWidth(640);
 
 		VBox vbox = new VBox();
-		vbox.setMinHeight(stage.getHeight() - 100);
+		vbox.setMinHeight(this.getHeight() - 100);
 		vbox.setStyle("-fx-background-color: black");
 
 		ScrollPane scrollpane = new ScrollPane();
@@ -37,7 +36,7 @@ public class Console extends Stage {
 		TextField textfield = new TextField();
 		textfield.setPrefHeight(25);
 		vbox.getChildren().add(textfield);
-		textfield.setPrefWidth(stage.getWidth() - 20);
+		textfield.setPrefWidth(this.getWidth() - 20);
 		textfield.setStyle("-fx-font-family: consolas; -fx-font-size: 14; -fx-text-fill: white; -fx-padding: 0; -fx-background-color: black");
 
 		textfield.setOnAction(e -> {
@@ -55,8 +54,8 @@ public class Console extends Stage {
 		root.getChildren().addAll(scrollpane);
 		root.setStyle("-fx-background-color: black");
 
-		stage.setScene(scene);
-		stage.show();
+		this.setScene(scene);
+		this.show();
 
 	}
 
