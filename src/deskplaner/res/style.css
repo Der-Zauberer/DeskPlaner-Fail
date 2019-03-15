@@ -54,7 +54,7 @@
 
 #widget{
 	-fx-background-color: rgba(0, 0, 0, 0.1);
-	-fx-background-radius: 20px;
+	-fx-background-radius: 10px;
 	-fx-padding: 10px 20px;
 }
 

@@ -14,7 +14,8 @@ public class GUILayout {
 
 	private HBox hbox;
 	private Scene scene;
-	private GridPane menu, content;
+	private GridPane menu;
+	private GridPane content;
 
 	private Label lbContent;
 

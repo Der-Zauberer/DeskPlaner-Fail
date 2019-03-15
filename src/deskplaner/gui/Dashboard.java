@@ -11,7 +11,7 @@ public class Dashboard extends GUILayout{
 	
 	public Dashboard() {
 		
-		setTitle("Dashboard");
+		super("Dashboard");
 		
 		Widget wgTest = new Widget("Console", e -> new Console());
 		wgTest.setText("Open");
@@ -31,9 +31,9 @@ public class Dashboard extends GUILayout{
 
 		getContent().add(new Widget("Test"), 1, 2);
 		
-		addMenuItem("Dashboard", e -> {});
+		addMenuItem("Dashboard", e -> Main.getStage().setScene(Main.dashboard.getScene()));
 		addMenuItem("Tasks", e -> Main.getStage().setScene(Main.notes.getScene()));
-		addMenuItem("Tools", e -> {});
+		addMenuItem("Tools", e -> Main.getStage().setScene(Main.tools.getScene()));
 		addMenuItem("Project", e -> {});
 		addMenuItem("Quit", e -> new Main().exit(), true);
 		addMenuItem("Settings", e -> {}, true);
