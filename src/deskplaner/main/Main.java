@@ -3,6 +3,7 @@ package deskplaner.main;
 import deskplaner.gui.Dashboard;
 import deskplaner.gui.Notes;
 import deskplaner.gui.Tools;
+import deskplaner.prototypes.TestGUI;
 import deskplaner.util.Program;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -44,7 +45,9 @@ public class Main extends Application {
 		tools = new Tools();
 
 		Program.configurateStage(stage);
-
+		
+		new TestGUI();
+		
 		Main.stage.setScene(dashboard.getScene());
 		Main.stage.show();
 
