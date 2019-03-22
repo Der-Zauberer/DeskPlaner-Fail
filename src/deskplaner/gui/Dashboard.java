@@ -6,6 +6,7 @@ import deskplaner.util.GUILayout;
 import deskplaner.util.Program;
 import deskplaner.util.Web;
 import deskplaner.util.Widget;
+import javafx.scene.layout.GridPane;
 
 public class Dashboard extends GUILayout{
 	
@@ -13,31 +14,33 @@ public class Dashboard extends GUILayout{
 		
 		super("Dashboard");
 		
+		GridPane gridpane = new GridPane();
+		gridpane.setHgap(20);
+		gridpane.setVgap(20);
+		getContent().getChildren().add(gridpane);
+		
 		Widget wgTest = new Widget("Console", e -> new Console());
 		wgTest.setText("Open");
-		getContent().add(wgTest, 0, 2);
+		gridpane.add(wgTest, 0, 2);
 		
 		Widget wgYouTube = new Widget("YouTube", e -> Web.openWebsite("https://www.youtube.com"));
 		wgYouTube.setText("Link: youtube.com");
 		wgYouTube.setColor("ff0000");
 		wgYouTube.setTextColor("ffffff");
-		getContent().add(wgYouTube, 0, 1);
+		gridpane.add(wgYouTube, 0, 1);
 		
 		Widget wgTwitter = new Widget("Twitter", e -> Web.openWebsite("https://www.twitter.com"));
 		wgTwitter.setText("Link: twitter.com");
 		wgTwitter.setColor("1da1f2");
 		wgTwitter.setTextColor("ffffff");
-		getContent().add(wgTwitter, 1, 1);
+		gridpane.add(wgTwitter, 1, 1);
 
-		getContent().add(new Widget("Test"), 1, 2);
+		gridpane.add(new Widget("Test"), 1, 2);
 		
 		addMenuItem("Dashboard", e -> Main.getStage().setScene(Main.dashboard.getScene()));
 		addMenuItem("Tasks", e -> Main.getStage().setScene(Main.notes.getScene()));
 		addMenuItem("Tools", e -> Main.getStage().setScene(Main.tools.getScene()));
 		addMenuItem("Project", e -> {});
-		addMenuItem("Quit", e -> new Main().exit(), true);
-		addMenuItem("Settings", e -> {}, true);
-		addMenuItem("Help", e -> {}, true);
 		
 		getScene().getStylesheets().add(getClass().getResource(Program.getStylePath()).toExternalForm());
 		

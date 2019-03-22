@@ -46,8 +46,6 @@ public class Main extends Application {
 
 		Program.configurateStage(stage);
 		
-		new TestGUI();
-		
 		Main.stage.setScene(dashboard.getScene());
 		Main.stage.show();
 

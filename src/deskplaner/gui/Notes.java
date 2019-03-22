@@ -20,9 +20,6 @@ public class Notes extends GUILayout{
 		addMenuItem("Tasks", e -> Main.getStage().setScene(Main.notes.getScene()));
 		addMenuItem("Tools", e -> Main.getStage().setScene(Main.tools.getScene()));
 		addMenuItem("Project", e -> {});
-		addMenuItem("Quit", e -> new Main().exit(), true);
-		addMenuItem("Settings", e -> {}, true);
-		addMenuItem("Help", e -> {}, true);
 		
 		getScene().getStylesheets().add(getClass().getResource(Program.getStylePath()).toExternalForm());
 		

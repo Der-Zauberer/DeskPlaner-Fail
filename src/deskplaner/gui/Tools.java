@@ -3,8 +3,10 @@ package deskplaner.gui;
 import deskplaner.main.Main;
 import deskplaner.util.GUILayout;
 import deskplaner.util.Program;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 
 public class Tools extends GUILayout {
 
@@ -15,19 +17,28 @@ public class Tools extends GUILayout {
 		addMenuItem("Tasks", e -> Main.getStage().setScene(Main.notes.getScene()));
 		addMenuItem("Tools", e -> Main.getStage().setScene(Main.tools.getScene()));
 		addMenuItem("Project", e -> {});
-		addMenuItem("Quit", e -> new Main().exit(), true);
-		addMenuItem("Settings", e -> {}, true);
-		addMenuItem("Help", e -> {}, true);
 		
-		getContent().add(new Label("Title"), 0, 1);
-		getContent().add(new Label("Version"), 1, 1);
-		getContent().add(new Label("Author"), 2, 1);
-		getContent().add(new Label("Open"), 3, 1);
+		GridPane gridpane = new GridPane();
+		gridpane.setId("list");
+		gridpane.setHgap(40);
+		gridpane.setVgap(20);
+		getContent().getChildren().add(gridpane);
+		gridpane.setPadding(new Insets(10));
 		
-		getContent().add(new Label("Console"), 0, 2);
-		getContent().add(new Label("0.1"), 1, 2);
-		getContent().add(new Label("DeskPlaner"), 2, 2);
-		getContent().add(new Button("Open"), 3, 2);
+		gridpane.add(new Label("Title"), 0, 1);
+		gridpane.add(new Label("Version"), 1, 1);
+		gridpane.add(new Label("Author"), 2, 1);
+		gridpane.add(new Label("Open"), 3, 1);
+		
+		gridpane.add(new Label("Console"), 0, 2);
+		gridpane.add(new Label("0.1"), 1, 2);
+		gridpane.add(new Label("DeskPlaner"), 2, 2);
+		gridpane.add(new Button("Open"), 3, 2);
+		
+		gridpane.add(new Label("Music"), 0, 3);
+		gridpane.add(new Label("0.1"), 1, 3);
+		gridpane.add(new Label("DeskPlaner"), 2, 3);
+		gridpane.add(new Button("Open"), 3, 3);
 		
 		getScene().getStylesheets().add(getClass().getResource(Program.getStylePath()).toExternalForm());
 		
