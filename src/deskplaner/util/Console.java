@@ -6,7 +6,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -14,20 +13,20 @@ public class Console extends Stage {
 
 	public Console() {
 		super();
-		StackPane root = new StackPane();
-		Scene scene = new Scene(root);
-
-		this.setHeight(480);
-		this.setWidth(640);
-
+		
 		VBox vbox = new VBox();
 		vbox.setMinHeight(this.getHeight() - 100);
 		vbox.setStyle("-fx-background-color: black");
-
+		
 		ScrollPane scrollpane = new ScrollPane();
 		scrollpane.setContent(vbox);
 		scrollpane.setHbarPolicy(ScrollBarPolicy.NEVER);
 		scrollpane.setStyle("-fx-background-color: black");
+		
+		Scene scene = new Scene(scrollpane);
+
+		this.setHeight(480);
+		this.setWidth(640);
 
 		Label label = new Label("Console");
 		label.setStyle("-fx-font-family: consolas; -fx-font-size: 14; -fx-text-fill: white;");
@@ -49,10 +48,6 @@ public class Console extends Stage {
 		});
 
 		vbox.setAlignment(Pos.TOP_LEFT);
-
-		root.setAlignment(Pos.TOP_LEFT);
-		root.getChildren().addAll(scrollpane);
-		root.setStyle("-fx-background-color: black");
 
 		this.setScene(scene);
 		this.show();

@@ -71,3 +71,11 @@
 	-fx-font-size: 16px;
 	-fx-pref-height: 20px;
 }
+
+#list Button{
+	-fx-background-color: #e6e6e6;
+	-fx-background-radius: 10px;
+	-fx-text-fill: #000000;
+	-fx-font-size: 16px;
+	-fx-pref-height: 20px;
+}

@@ -3,7 +3,6 @@ package deskplaner.main;
 import deskplaner.gui.Dashboard;
 import deskplaner.gui.Notes;
 import deskplaner.gui.Tools;
-import deskplaner.prototypes.TestGUI;
 import deskplaner.util.Program;
 import javafx.application.Application;
 import javafx.stage.Stage;

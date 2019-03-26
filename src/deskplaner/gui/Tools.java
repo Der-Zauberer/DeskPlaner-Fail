@@ -14,7 +14,7 @@ public class Tools extends GUILayout {
 		super("Tools");
 		
 		addMenuItem("Dashboard", e -> Main.getStage().setScene(Main.dashboard.getScene()));
-		addMenuItem("Tasks", e -> Main.getStage().setScene(Main.notes.getScene()));
+		addMenuItem("Notes", e -> Main.getStage().setScene(Main.notes.getScene()));
 		addMenuItem("Tools", e -> Main.getStage().setScene(Main.tools.getScene()));
 		addMenuItem("Project", e -> {});
 		
