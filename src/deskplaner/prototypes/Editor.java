@@ -64,7 +64,7 @@ public class Editor extends Stage {
 
 			}
 		}
-	};
+	}
 
 	public void open(Stage primaryStage, TextArea text) throws IOException {
 		FileChooser fileChooser = new FileChooser();

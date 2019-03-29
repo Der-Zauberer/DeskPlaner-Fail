@@ -1,8 +1,8 @@
 package deskplaner.gui;
 
 import deskplaner.main.Main;
+import deskplaner.res.Resource;
 import deskplaner.util.DeskLayout;
-import deskplaner.util.Program;
 import deskplaner.util.DeskWidget;
 import javafx.scene.layout.FlowPane;
 
@@ -27,7 +27,7 @@ public class Notes extends DeskLayout{
 		addMenuItem("Tools", e -> Main.getStage().setScene(Main.tools.getScene()));
 		addMenuItem("Project", e -> {});
 		
-		getScene().getStylesheets().add(getClass().getResource(Program.getStylePath()).toExternalForm());
+		getScene().getStylesheets().add(Resource.getStyleSheet("style.css"));
 		
 	}
 

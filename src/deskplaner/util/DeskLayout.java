@@ -34,7 +34,7 @@ public class DeskLayout {
 		content.setAlignment(Pos.TOP_LEFT);
 		content.setId("content");
 
-		Label lbTitle = new Label(Program.getName());
+		Label lbTitle = new Label("DeskPlaner");
 		lbTitle.setId("menutitle");
 		menu.getChildren().add(lbTitle);
 

@@ -1,8 +1,8 @@
 package deskplaner.gui;
 
 import deskplaner.main.Main;
+import deskplaner.res.Resource;
 import deskplaner.util.DeskLayout;
-import deskplaner.util.Program;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -40,7 +40,7 @@ public class Tools extends DeskLayout {
 		gridpane.add(new Label("DeskPlaner"), 2, 3);
 		gridpane.add(new Button("Open"), 3, 3);
 		
-		getScene().getStylesheets().add(getClass().getResource(Program.getStylePath()).toExternalForm());
+		getScene().getStylesheets().add(Resource.getStyleSheet("style.css"));
 		
 	}
 
