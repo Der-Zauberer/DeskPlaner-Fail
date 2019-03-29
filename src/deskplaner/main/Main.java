@@ -62,6 +62,9 @@ public class Main extends Application {
 		return stage;
 	}
 
+	/**
+	 * Close all DeskPlaner systems.
+	 */
 	public void exit() {
 		System.exit(0);
 	}

@@ -1,12 +1,12 @@
 package deskplaner.gui;
 
 import deskplaner.main.Main;
-import deskplaner.util.GUILayout;
+import deskplaner.util.DeskLayout;
 import deskplaner.util.Program;
-import deskplaner.util.Widget;
+import deskplaner.util.DeskWidget;
 import javafx.scene.layout.FlowPane;
 
-public class Notes extends GUILayout{
+public class Notes extends DeskLayout{
 
 	public Notes() {
 		
@@ -17,7 +17,7 @@ public class Notes extends GUILayout{
 		flowpane.setVgap(20);
 		getContent().getChildren().add(flowpane);
 		
-		Widget note1 = new Widget("Note");
+		DeskWidget note1 = new DeskWidget("Note");
 		note1.setText("Todo \n - Dashboard \n - Notes \n - Tools \n - Files");
 		note1.setPrefSize(100, 180);
 		flowpane.getChildren().add(note1);

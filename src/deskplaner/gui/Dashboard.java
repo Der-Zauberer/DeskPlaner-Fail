@@ -2,13 +2,13 @@ package deskplaner.gui;
 
 import deskplaner.main.Main;
 import deskplaner.util.Console;
-import deskplaner.util.GUILayout;
+import deskplaner.util.DeskLayout;
 import deskplaner.util.Program;
-import deskplaner.util.Web;
-import deskplaner.util.Widget;
+import deskplaner.util.DeskWeb;
+import deskplaner.util.DeskWidget;
 import javafx.scene.layout.GridPane;
 
-public class Dashboard extends GUILayout{
+public class Dashboard extends DeskLayout{
 	
 	public Dashboard() {
 		
@@ -19,23 +19,23 @@ public class Dashboard extends GUILayout{
 		gridpane.setVgap(40);
 		getContent().getChildren().add(gridpane);
 		
-		Widget wgTest = new Widget("Console", e -> new Console());
+		DeskWidget wgTest = new DeskWidget("Console", e -> new Console());
 		wgTest.setText("Open");
 		gridpane.add(wgTest, 0, 2);
 		
-		Widget wgYouTube = new Widget("YouTube", e -> Web.openWebsite("https://www.youtube.com"));
+		DeskWidget wgYouTube = new DeskWidget("YouTube", e -> DeskWeb.openWebsite("https://www.youtube.com"));
 		wgYouTube.setText("Link: youtube.com");
 		wgYouTube.setColor("ff0000");
 		wgYouTube.setTextColor("ffffff");
 		gridpane.add(wgYouTube, 0, 1);
 		
-		Widget wgTwitter = new Widget("Twitter", e -> Web.openWebsite("https://www.twitter.com"));
+		DeskWidget wgTwitter = new DeskWidget("Twitter", e -> DeskWeb.openWebsite("https://www.twitter.com"));
 		wgTwitter.setText("Link: twitter.com");
 		wgTwitter.setColor("1da1f2");
 		wgTwitter.setTextColor("ffffff");
 		gridpane.add(wgTwitter, 1, 1);
 
-		gridpane.add(new Widget("Test"), 1, 2);
+		gridpane.add(new DeskWidget("Test"), 1, 2);
 		
 		addMenuItem("Dashboard", e -> Main.getStage().setScene(Main.dashboard.getScene()));
 		addMenuItem("Notes", e -> Main.getStage().setScene(Main.notes.getScene()));

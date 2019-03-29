@@ -1,14 +1,14 @@
 package deskplaner.gui;
 
 import deskplaner.main.Main;
-import deskplaner.util.GUILayout;
+import deskplaner.util.DeskLayout;
 import deskplaner.util.Program;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
-public class Tools extends GUILayout {
+public class Tools extends DeskLayout {
 
 	public Tools() {
 		super("Tools");

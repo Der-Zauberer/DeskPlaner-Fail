@@ -10,7 +10,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class GUILayout {
+public class DeskLayout {
 
 	private HBox hbox;
 	private Scene scene;
@@ -22,7 +22,7 @@ public class GUILayout {
 	/**
 	 * Create a scene and two stackpanes with menu and content area.
 	 */
-	public GUILayout() {
+	public DeskLayout() {
 		hbox = new HBox();
 		scene = new Scene(hbox);
 
@@ -51,7 +51,10 @@ public class GUILayout {
 		hbox.getChildren().addAll(menu, content);
 	}
 	
-	public GUILayout(String title) {
+	/**
+	 * Create a scene and two stackpanes with menu and content area.
+	 */
+	public DeskLayout(String title) {
 		this();
 		lbContent.setText(title);
 	}
