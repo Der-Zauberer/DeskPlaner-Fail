@@ -23,7 +23,7 @@
 	-fx-text-fill: #ffffff;
 	-fx-background-radius: 0;
 	-fx-font-size: 30px;
-	-fx-padding: 40px 40px 40px 40px;
+	-fx-padding: 40px;
 }
 
 #menu #menuitem{

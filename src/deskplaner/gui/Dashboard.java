@@ -15,8 +15,8 @@ public class Dashboard extends GUILayout{
 		super("Dashboard");
 		
 		GridPane gridpane = new GridPane();
-		gridpane.setHgap(20);
-		gridpane.setVgap(20);
+		gridpane.setHgap(40);
+		gridpane.setVgap(40);
 		getContent().getChildren().add(gridpane);
 		
 		Widget wgTest = new Widget("Console", e -> new Console());
