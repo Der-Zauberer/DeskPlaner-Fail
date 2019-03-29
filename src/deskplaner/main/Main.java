@@ -43,6 +43,8 @@ public class Main extends Application {
 		dashboard = new Dashboard();
 		notes = new Notes();
 		tools = new Tools();
+		
+		new Editor();
 
 		Program.configurateStage(stage);
 		
