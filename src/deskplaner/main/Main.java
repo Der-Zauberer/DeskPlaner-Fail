@@ -1,7 +1,5 @@
 package deskplaner.main;
 
-import java.net.URLDecoder;
-
 import deskplaner.gui.Dashboard;
 import deskplaner.gui.Notes;
 import deskplaner.gui.Tools;

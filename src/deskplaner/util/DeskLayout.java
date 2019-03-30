@@ -6,7 +6,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -29,11 +28,11 @@ public class DeskLayout {
 		menu = new VBox();
 		menu.setAlignment(Pos.TOP_LEFT);
 		menu.setId("menu");
-		menu.setPrefWidth(250);
+		menu.setMinWidth(250);
 		content = new VBox();
 		content.setAlignment(Pos.TOP_LEFT);
 		content.setId("content");
-
+		
 		Label lbTitle = new Label("DeskPlaner");
 		lbTitle.setId("menutitle");
 		menu.getChildren().add(lbTitle);
@@ -41,11 +40,9 @@ public class DeskLayout {
 		lbContent = new Label();
 		lbContent.setText("Default");
 		lbContent.setStyle("-fx-font-size: 40px;");
-		lbContent.setPrefHeight(80);
+		lbContent.setPrefHeight(100);
 		lbContent.setAlignment(Pos.TOP_LEFT);
 		content.getChildren().add(lbContent);
-		
-		GridPane.setColumnSpan(lbContent, 2);
 
 		hbox.setAlignment(Pos.TOP_LEFT);
 		hbox.getChildren().addAll(menu, content);

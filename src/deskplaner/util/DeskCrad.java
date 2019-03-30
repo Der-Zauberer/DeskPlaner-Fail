@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class DeskWidget extends AnchorPane{
+public class DeskCrad extends AnchorPane{
 	
 	public enum WidgetType{TITLE, TITLEANDTEXT, NUMBER}
 	
@@ -14,7 +14,7 @@ public class DeskWidget extends AnchorPane{
 	private Label lbText;
 	private Label lbNumber;
 	
-	public DeskWidget(String title) {
+	public DeskCrad(String title) {
 		super();
 		this.setMinWidth(200);
 		this.setMinHeight(100);
@@ -33,7 +33,7 @@ public class DeskWidget extends AnchorPane{
 		setDistances(WidgetType.TITLE);
 	}
 	
-	public DeskWidget(String title, EventHandler<MouseEvent> event) {
+	public DeskCrad(String title, EventHandler<MouseEvent> event) {
 		this(title);
 		this.setOnMouseClicked(event);
 	}
