@@ -1,4 +1,4 @@
-package deskplaner.gui;
+package deskplaner.notes;
 
 import deskplaner.main.Main;
 import deskplaner.res.Resource;

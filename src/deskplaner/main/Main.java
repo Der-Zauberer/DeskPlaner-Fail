@@ -1,8 +1,10 @@
 package deskplaner.main;
 
-import deskplaner.gui.Dashboard;
-import deskplaner.gui.Notes;
-import deskplaner.gui.Tools;
+import deskplaner.dashboard.Dashboard;
+import deskplaner.notes.Notes;
+import deskplaner.tools.Tools;
+import deskplaner.util.DeskDialog;
+import deskplaner.util.DeskDialog.CloseOption;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

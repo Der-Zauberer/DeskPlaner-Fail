@@ -84,3 +84,8 @@
 #list Button:hover{
 	-fx-background-color: #0072e6;
 }
+
+#dialog ToolBar Button{
+	-fx-pref-height: 30px;
+	-fx-pref-width: 60px;
+}

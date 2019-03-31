@@ -1,4 +1,4 @@
-package deskplaner.gui;
+package deskplaner.tools;
 
 import deskplaner.main.Main;
 import deskplaner.prototypes.Browser;
@@ -42,8 +42,6 @@ public class Tools extends DeskLayout {
 		addToolEntry("Console", 0.1, "André Sommer", "Utilities", e -> new Console());
 		addToolEntry("Editor", 0.1, "André Sommer", "Prototypes", e -> new Editor());
 		addToolEntry("Browser", 0.1, "André Sommer", "Prototypes", e -> new Browser());
-		
-		
 		
 		getScene().getStylesheets().add(Resource.getStyleSheet("style.css"));
 		
