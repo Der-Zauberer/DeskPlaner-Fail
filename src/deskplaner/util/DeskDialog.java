@@ -1,6 +1,8 @@
 package deskplaner.util;
 
 import deskplaner.res.Resource;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -50,30 +52,32 @@ public class DeskDialog extends Stage{
 		root.setId("dialog");
 		root.getChildren().addAll(gridpane, toolbar);
 		
+		btYes = new Button("Yes");
+		btNo = new Button("No");
+		btCancel = new Button("Cancel");
+		
 		switch (closeoption) {
 		case OK:
-			btYes = new Button("Ok");
+			btYes.setText("Ok");
 			toolbar.getItems().addAll(placeholder, btYes);
 			break;
 		case OKCANCEL:
-			btYes = new Button("Ok");
-			btCancel = new Button("Cancel");
+			btYes.setText("Ok");
 			toolbar.getItems().addAll(btCancel, placeholder, btYes);
 			break;
 		case YESNO:
-			btYes = new Button("Yes");
-			btNo = new Button("No");
 			toolbar.getItems().addAll(btNo, placeholder, btYes);
 			break;
 		case YESNOCANCEL:
-			btYes = new Button("Yes");
-			btNo = new Button("No");
-			btCancel = new Button("Cancel");
 			toolbar.getItems().addAll(btCancel, placeholder,btNo, btYes);
 			break;
 		default:
 			break;
 		}
+		
+		btYes.setOnAction(e -> this.close());
+		btNo.setOnAction(e -> this.close());
+		btCancel.setOnAction(e -> this.close());
 		
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(Resource.getStyleSheet("style.css"));
@@ -85,5 +89,41 @@ public class DeskDialog extends Stage{
 		this.setResizable(false);
 		this.show();
 	}
+	
+	/**
+	 * Set the action on button click.
+	 * 
+	 * @param event The event which is called by clicking the Button
+	 */
+	public void setOnOk(EventHandler<ActionEvent> event) {
+		btYes.setOnAction(event);
+	}
+	
+	/**
+	 * Set the action on button click.
+	 * 
+	 * @param event The event which is called by clicking the Button
+	 */
+	public void setOnYes(EventHandler<ActionEvent> event) {
+		btYes.setOnAction(event);
+	}
 
+	/**
+	 * Set the action on button click.
+	 * 
+	 * @param event The event which is called by clicking the Button
+	 */
+	public void setOnNo(EventHandler<ActionEvent> event) {
+		btNo.setOnAction(event);
+	}
+	
+	/**
+	 * Set the action on button click.
+	 * 
+	 * @param event The event which is called by clicking the Button
+	 */
+	public void setOnCancel(EventHandler<ActionEvent> event) {
+		btCancel.setOnAction(event);
+	}
+	
 }

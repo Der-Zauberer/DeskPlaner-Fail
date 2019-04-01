@@ -19,7 +19,7 @@ public class DeskLayout {
 	private Label lbContent;
 
 	/**
-	 * Create a scene and two stackpanes with menu and content area.
+	 * Create a scene and two vboxes with menu and content area.
 	 */
 	public DeskLayout() {
 		hbox = new HBox();
@@ -73,12 +73,12 @@ public class DeskLayout {
 	 */
 	public void addMenuItem(String title, EventHandler<ActionEvent> event) {
 		Button button = new Button(title);
+		button.setId("menuitem");
 		button.setPrefHeight(40);
 		button.setPrefWidth(250);
 		button.setAlignment(Pos.CENTER_LEFT);
-		menu.getChildren().add(button);
 		button.setOnAction(event);
-		button.setId("menuitem");
+		menu.getChildren().add(button);
 	}
 
 	/**

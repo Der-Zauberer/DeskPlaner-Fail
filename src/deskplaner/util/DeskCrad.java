@@ -14,6 +14,11 @@ public class DeskCrad extends AnchorPane{
 	private Label lbText;
 	private Label lbNumber;
 	
+	/**
+	 * Set a new card with title.
+	 * 
+	 * @param title Set the title of the card
+	 */
 	public DeskCrad(String title) {
 		super();
 		this.setMinWidth(200);
@@ -33,21 +38,42 @@ public class DeskCrad extends AnchorPane{
 		setDistances(WidgetType.TITLE);
 	}
 	
+	/**
+	 * Set a new card with title.
+	 * 
+	 * @param title Set the title of the card
+	 * @param event Set the action on clicked
+	 */
 	public DeskCrad(String title, EventHandler<MouseEvent> event) {
 		this(title);
 		this.setOnMouseClicked(event);
 	}
 	
+	/**
+	 * Set the text of the card.
+	 * 
+	 * @param text Set the text of the card
+	 */
 	public void setText(String text) {
 		lbText.setText(text);
 		lbText.setVisible(true);
 		setDistances(WidgetType.TITLEANDTEXT);
 	}
 	
+	/**
+	 * Set the backgroundcolor of the Card
+	 * 
+	 * @param hexcolor Set the color as hexadecimal
+	 */
 	public void setColor(String hexcolor) {
 		this.setStyle("-fx-background-color: #" + hexcolor);
 	}
 	
+	/**
+	 * Set the font color of the Card
+	 * 
+	 * @param hexcolor Set the color as hexadecimal
+	 */
 	public void setTextColor(String hexcolor) {
 		lbTitle.setStyle("-fx-text-fill: #" + hexcolor + "; -fx-font-size: 20px;");
 		lbText.setStyle("-fx-text-fill: #" + hexcolor);

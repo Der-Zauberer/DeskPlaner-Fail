@@ -44,7 +44,8 @@ public class Main extends Application {
 		stage.setWidth(1280);
 		stage.setMinHeight(720);
 		stage.setMinWidth(1280);
-		stage.setMaximized(true);
+		
+		new DeskDialog("Test", "Test", CloseOption.YESNOCANCEL);
 		
 		Main.stage.setScene(dashboard.getScene());
 		Main.stage.show();
