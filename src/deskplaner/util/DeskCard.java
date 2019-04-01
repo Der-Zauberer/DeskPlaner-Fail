@@ -6,25 +6,25 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class DeskCrad extends AnchorPane{
-	
-	public enum WidgetType{TITLE, TITLEANDTEXT, NUMBER}
-	
+public class DeskCard extends AnchorPane {
+
+	public enum WidgetType {
+		TITLE, TITLEANDTEXT, NUMBER
+	}
+
 	private Label lbTitle;
 	private Label lbText;
 	private Label lbNumber;
-	
+
 	/**
-	 * Set a new card with title.
-	 * 
-	 * @param title Set the title of the card
+	 * Set a new card.
 	 */
-	public DeskCrad(String title) {
+	public DeskCard() {
 		super();
 		this.setMinWidth(200);
 		this.setMinHeight(100);
 		this.setId("widget");
-		lbTitle = new Label(title);
+		lbTitle = new Label();
 		lbTitle.setPrefWidth(150);
 		lbTitle.setTranslateX(20);
 		lbTitle.setStyle("-fx-font-size: 20px");
@@ -37,18 +37,46 @@ public class DeskCrad extends AnchorPane{
 		this.getChildren().add(lbNumber);
 		setDistances(WidgetType.TITLE);
 	}
-	
+
+	/**
+	 * Set a new card with title.
+	 * 
+	 * @param title Set the title of the card
+	 */
+	public DeskCard(String title) {
+		this();
+		lbTitle.setText(title);
+	}
+
 	/**
 	 * Set a new card with title.
 	 * 
 	 * @param title Set the title of the card
 	 * @param event Set the action on clicked
 	 */
-	public DeskCrad(String title, EventHandler<MouseEvent> event) {
+	public DeskCard(String title, EventHandler<MouseEvent> event) {
 		this(title);
 		this.setOnMouseClicked(event);
 	}
-	
+
+	/**
+	 * Set the title of the card.
+	 * 
+	 * @param title Set the title of the card
+	 */
+	public void setTitle(String title) {
+		lbTitle.setText(title);
+	}
+
+	/**
+	 * Returns the label of the title.
+	 * 
+	 * @return The label of the title.
+	 */
+	public Label getTitle() {
+		return lbTitle;
+	}
+
 	/**
 	 * Set the text of the card.
 	 * 
@@ -59,7 +87,16 @@ public class DeskCrad extends AnchorPane{
 		lbText.setVisible(true);
 		setDistances(WidgetType.TITLEANDTEXT);
 	}
-	
+
+	/**
+	 * Returns the label of the text.
+	 * 
+	 * @return The label of the text.
+	 */
+	public Label getText() {
+		return lbText;
+	}
+
 	/**
 	 * Set the backgroundcolor of the Card
 	 * 
@@ -68,7 +105,7 @@ public class DeskCrad extends AnchorPane{
 	public void setColor(String hexcolor) {
 		this.setStyle("-fx-background-color: #" + hexcolor);
 	}
-	
+
 	/**
 	 * Set the font color of the Card
 	 * 
@@ -78,7 +115,7 @@ public class DeskCrad extends AnchorPane{
 		lbTitle.setStyle("-fx-text-fill: #" + hexcolor + "; -fx-font-size: 20px;");
 		lbText.setStyle("-fx-text-fill: #" + hexcolor);
 	}
-	
+
 	private void setDistances(WidgetType widgettype) {
 		switch (widgettype) {
 		case TITLE:

@@ -13,6 +13,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class DeskDialog extends Stage{
 
@@ -91,6 +92,15 @@ public class DeskDialog extends Stage{
 	}
 	
 	/**
+	 * Get the GridPane of the dialog.
+	 * 
+	 * @return The GridPaneof the dialog
+	 */
+	public GridPane getGridPane() {
+		return gridpane;
+	}
+	
+	/**
 	 * Set the action on button click.
 	 * 
 	 * @param event The event which is called by clicking the Button
@@ -122,8 +132,9 @@ public class DeskDialog extends Stage{
 	 * 
 	 * @param event The event which is called by clicking the Button
 	 */
-	public void setOnCancel(EventHandler<ActionEvent> event) {
+	public void setOnCancel(EventHandler<ActionEvent> event, EventHandler<WindowEvent> windowevent) {
 		btCancel.setOnAction(event);
+		this.setOnCloseRequest(windowevent);
 	}
 	
 }

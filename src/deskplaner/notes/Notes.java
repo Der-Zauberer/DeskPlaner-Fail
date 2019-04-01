@@ -3,7 +3,6 @@ package deskplaner.notes;
 import deskplaner.main.Main;
 import deskplaner.res.Resource;
 import deskplaner.util.DeskLayout;
-import deskplaner.util.DeskCrad;
 import javafx.scene.layout.FlowPane;
 
 public class Notes extends DeskLayout{
@@ -17,10 +16,8 @@ public class Notes extends DeskLayout{
 		flowpane.setVgap(20);
 		getContent().getChildren().add(flowpane);
 		
-		DeskCrad note1 = new DeskCrad("Note");
-		note1.setText("Todo \n - Dashboard \n - Notes \n - Tools \n - Files");
-		note1.setPrefSize(100, 180);
-		flowpane.getChildren().add(note1);
+		NotesCard notescard = new NotesCard();
+		flowpane.getChildren().add(notescard);
 		
 		addMenuItem("Dashboard", e -> Main.getStage().setScene(Main.dashboard.getScene()));
 		addMenuItem("Notes", e -> Main.getStage().setScene(Main.notes.getScene()));
