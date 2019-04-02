@@ -40,7 +40,7 @@ public class DeskLayout {
 		lbContent = new Label();
 		lbContent.setText("Default");
 		lbContent.setStyle("-fx-font-size: 40px;");
-		lbContent.setPrefHeight(100);
+		lbContent.setMinHeight(100);
 		lbContent.setAlignment(Pos.TOP_LEFT);
 		content.getChildren().add(lbContent);
 
