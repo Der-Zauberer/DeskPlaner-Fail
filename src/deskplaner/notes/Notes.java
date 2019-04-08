@@ -4,9 +4,7 @@ import deskplaner.main.Main;
 import deskplaner.res.Resource;
 import deskplaner.util.DeskLayout;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.VBox;
 
 public class Notes extends DeskLayout{
 
@@ -21,17 +19,12 @@ public class Notes extends DeskLayout{
 		flowpane.setVgap(50);
 		getContent().getChildren().add(flowpane);
 		
-		Button btAdd = new Button("+ Add");
-		btAdd.setOnAction(e -> addNoteCard());
+		addHeaderItem("+ Add", e -> addNoteCard());
 		
-		VBox vbox = new VBox();
-		vbox.getChildren().add(btAdd);
-		getContent().getChildren().add(vbox);
-		
-		addMenuItem("Dashboard", e -> Main.getStage().setScene(Main.dashboard.getScene()));
-		addMenuItem("Notes", e -> Main.getStage().setScene(Main.notes.getScene()));
-		addMenuItem("Tools", e -> Main.getStage().setScene(Main.tools.getScene()));
-		addMenuItem("Project", e -> {});
+		addNavigationItem("Dashboard", e -> Main.getStage().setScene(Main.dashboard.getScene()));
+		addNavigationItem("Notes", e -> Main.getStage().setScene(Main.notes.getScene()));
+		addNavigationItem("Tools", e -> Main.getStage().setScene(Main.tools.getScene()));
+		addNavigationItem("Projects", e -> {});
 		
 		getScene().getStylesheets().add(Resource.getStyleSheet("style.css"));
 		

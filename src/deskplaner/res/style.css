@@ -1,8 +1,9 @@
 .root{
 	-fx-background-color: white;
+	-fx-text-fill: black;
 }
 
-#menu{
+#navigation{
 	-fx-background-color: #0072e6;
 }
 
@@ -18,7 +19,7 @@
 	-fx-text-fill: #000000;
 }
 
-#menu #menutitle{
+#navigation #navigationtitle{
 	-fx-background-color: transparent;
 	-fx-text-fill: #ffffff;
 	-fx-background-radius: 0;
@@ -26,7 +27,7 @@
 	-fx-padding: 50px 40px;
 }
 
-#menu #menuitem{
+#navigation #navigationitem{
 	-fx-background-color: transparent;
 	-fx-text-fill: #ffffff;
 	-fx-background-radius: 0;
@@ -34,8 +35,17 @@
 	-fx-padding: 0 40px 0 40px;
 }
 
-#menu #menuitem:hover{
+#navigation #navigationitem:hover{
 	-fx-background-color: rgba(0, 0, 0, 0.1);
+}
+
+#headeritem{
+	-fx-font-size: 15px;
+	-fx-background-color: #e6e6e6;
+}
+
+#headeritem:hover{
+	-fx-background-color: #cccccc;
 }
 
 #content{

@@ -27,7 +27,6 @@ public class NotesCard extends DeskCard{
 		dialog.getGridPane().add(textarea, 0, 1);
 		
 		dialog.setOnOk(e -> {
-			this.setPrefHeight(getText().getHeight() + 110);
 			setText(textfield.getText());
 			setText(textarea.getText());
 			dialog.close();

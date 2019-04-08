@@ -42,10 +42,10 @@ public class Dashboard extends DeskLayout{
 		gridpane.add(new DeskCard("Test"), 4, 0);
 		gridpane.add(new DeskCard("Test"), 5, 0);
 		
-		addMenuItem("Dashboard", e -> Main.getStage().setScene(Main.dashboard.getScene()));
-		addMenuItem("Notes", e -> Main.getStage().setScene(Main.notes.getScene()));
-		addMenuItem("Tools", e -> Main.getStage().setScene(Main.tools.getScene()));
-		addMenuItem("Project", e -> {});
+		addNavigationItem("Dashboard", e -> Main.getStage().setScene(Main.dashboard.getScene()));
+		addNavigationItem("Notes", e -> Main.getStage().setScene(Main.notes.getScene()));
+		addNavigationItem("Tools", e -> Main.getStage().setScene(Main.tools.getScene()));
+		addNavigationItem("Projects", e -> {});
 		
 		getScene().getStylesheets().add(Resource.getStyleSheet("style.css"));
 		
