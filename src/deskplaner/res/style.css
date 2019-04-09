@@ -32,6 +32,7 @@
 .header Button{
 	-fx-font-size: 15px;
 	-fx-background-color: #e6e6e6;
+	-fx-text-fill: black;
 }
 
 .header Button:hover{
@@ -62,11 +63,12 @@
 
 .card Button{
 	-fx-background-color: transparent;
+	-fx-min-height: 30px;
+	-fx-min-width: 60px;
 }
 
-.dialog ToolBar Button{
-	-fx-pref-height: 30px;
-	-fx-pref-width: 60px;
+.dialog ToolBar{
+	-fx-background-color: transparent;
 }
 
 #list{
@@ -107,4 +109,39 @@ TextArea{
 
 TextArea:hover{
 	-fx-border-color: #0072e6; 
+}
+
+Button{
+	-fx-min-height: 30px;
+	-fx-min-width: 60px;
+	-fx-font-size: 15px;
+	-fx-background-color: #0072e6;
+	-fx-text-fill: white;
+}
+
+.scroll-bar:horizontal , .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.increment-button , .decrement-button {
+    -fx-background-color:transparent;
+}
+
+.scroll-bar:horizontal .track , .scroll-bar:vertical .track{
+     -fx-background-color: transparent;
+     -fx-max-width: 2px;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+ 	-fx-background-color: #cccccc;
+ 
+}
+
+.scroll-bar:horizontal:hover .track ,
+.scroll-bar:horizontal:pressed .track ,
+.scroll-bar:vertical:hover .track ,
+.scroll-bar:vertical:pressed .track{
+     -fx-background-color: #ff0000;
+ 
 }
