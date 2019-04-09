@@ -33,14 +33,14 @@ public class DeskLayout {
 
 		navigation = new VBox();
 		navigation.setAlignment(Pos.TOP_LEFT);
-		navigation.setId("navigation");
+		navigation.getStyleClass().add("navigation");
 		navigation.setMinWidth(250);
 		content = new VBox();
 		content.setAlignment(Pos.TOP_LEFT);
-		content.setId("content");
+		content.getStyleClass().add("content");
+		content.setStyle("-fx-padding: 50px 70px");
 
 		Label navigationTitle = new Label("DeskPlaner");
-		navigationTitle.setId("navigationtitle");
 		navigation.getChildren().add(navigationTitle);
 
 		placeholder = new HBox();
@@ -52,6 +52,7 @@ public class DeskLayout {
 		lbTitle.setAlignment(Pos.TOP_LEFT);
 
 		header = new ToolBar();
+		header.getStyleClass().add("header");
 		header.setPadding(new Insets(0, 0, 50, 0));
 		header.setBackground(Background.EMPTY);
 		header.getItems().addAll(lbTitle, placeholder);
@@ -97,7 +98,6 @@ public class DeskLayout {
 	 */
 	public void addNavigationItem(String title, EventHandler<ActionEvent> event) {
 		Button button = new Button(title);
-		button.setId("navigationitem");
 		button.setPrefHeight(40);
 		button.setPrefWidth(250);
 		button.setAlignment(Pos.CENTER_LEFT);
@@ -107,7 +107,6 @@ public class DeskLayout {
 
 	public void addHeaderItem(String title, EventHandler<ActionEvent> event) {
 		Button button = new Button(title);
-		button.setId("headeritem");
 		button.setOnAction(event);
 		header.getItems().add(button);
 	}

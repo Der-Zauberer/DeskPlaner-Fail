@@ -50,7 +50,7 @@ public class DeskDialog extends Stage{
 		toolbar = new ToolBar();
 		
 		VBox root = new VBox();
-		root.setId("dialog");
+		root.getStyleClass().add("dialog");
 		root.getChildren().addAll(gridpane, toolbar);
 		
 		btYes = new Button("Yes");

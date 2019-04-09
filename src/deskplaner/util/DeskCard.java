@@ -23,7 +23,7 @@ public class DeskCard extends AnchorPane {
 		super();
 		this.setMinWidth(200);
 		this.setMinHeight(100);
-		this.setId("widget");
+		this.getStyleClass().add("card");
 		lbTitle = new Label();
 		lbTitle.setPrefWidth(150);
 		lbTitle.setTranslateX(20);
