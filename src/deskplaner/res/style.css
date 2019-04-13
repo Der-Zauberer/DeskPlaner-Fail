@@ -74,20 +74,13 @@
 #list{
 	-fx-text-fill: #000000;
 	-fx-font-size: 16px;
-	-fx-pref-height: 20px;
+	-fx-pref-height: 30px;
 }
 
 #list Button{
-	-fx-background-color: #e6e6e6;
-	-fx-background-radius: 5px;
-	-fx-min-width: 80px;
-	-fx-text-fill: #000000;
-	-fx-font-size: 16px;
-	-fx-pref-height: 20px;
-}
-
-#list Button:hover{
 	-fx-background-color: #0072e6;
+	-fx-min-width: 80px;
+	-fx-text-fill: white;
 }
 
 TextField{
@@ -96,7 +89,7 @@ TextField{
 	-fx-border-width: 2px; 
 }
 
-TextField:hover{
+TextField:hover, TextField:active{
 	-fx-border-color: #0072e6; 
 }
 
@@ -107,11 +100,12 @@ TextArea{
 	-fx-border-width: 2px; 
 }
 
-TextArea:hover{
+TextArea:hover, TextField:active{
 	-fx-border-color: #0072e6; 
 }
 
 Button{
+	-fx-background-radius: 5px;
 	-fx-min-height: 30px;
 	-fx-min-width: 60px;
 	-fx-font-size: 15px;
@@ -144,4 +138,8 @@ Button{
 .scroll-bar:vertical:pressed .track{
      -fx-background-color: #ff0000;
  
+}
+
+#delete{
+	-fx-background-color: red;
 }
