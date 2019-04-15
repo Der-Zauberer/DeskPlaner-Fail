@@ -42,6 +42,10 @@ public class Editor extends Stage {
 			}
 		});
 		btSave.setOnAction(e -> saveFile(Main.getStage(), textarea));
+		
+		scene.heightProperty().addListener((obs, oldVal, newVal) -> {
+			textarea.setPrefHeight(scene.getWidth() - 100);
+		});
 
 		this.setScene(scene);
 		this.show();
@@ -56,8 +60,7 @@ public class Editor extends Stage {
 
 		if (file != null) {
 			try {
-				FileWriter fileWriter = null;
-				fileWriter = new FileWriter(file);
+				FileWriter fileWriter = new FileWriter(file);
 				fileWriter.write(text.getText());
 				fileWriter.close();
 			} catch (IOException ex) {
