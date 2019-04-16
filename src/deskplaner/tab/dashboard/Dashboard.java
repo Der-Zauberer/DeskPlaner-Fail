@@ -1,14 +1,14 @@
-package deskplaner.dashboard;
+package deskplaner.tab.dashboard;
 
 import deskplaner.main.Main;
 import deskplaner.res.Resource;
 import deskplaner.util.Console;
-import deskplaner.util.DeskLayout;
+import deskplaner.util.DeskTab;
 import deskplaner.util.DeskWeb;
 import deskplaner.util.DeskCard;
 import javafx.scene.layout.GridPane;
 
-public class Dashboard extends DeskLayout{
+public class Dashboard extends DeskTab{
 	
 	public Dashboard() {
 		

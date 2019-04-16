@@ -1,8 +1,8 @@
 package deskplaner.main;
 
-import deskplaner.dashboard.Dashboard;
-import deskplaner.notes.Notes;
-import deskplaner.tools.Tools;
+import deskplaner.tab.dashboard.Dashboard;
+import deskplaner.tab.notes.Notes;
+import deskplaner.tab.tools.Tools;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

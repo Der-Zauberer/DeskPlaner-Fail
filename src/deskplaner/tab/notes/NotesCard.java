@@ -1,4 +1,4 @@
-package deskplaner.notes;
+package deskplaner.tab.notes;
 
 import deskplaner.util.DeskCard;
 import deskplaner.util.DeskDialog;

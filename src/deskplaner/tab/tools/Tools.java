@@ -1,11 +1,11 @@
-package deskplaner.tools;
+package deskplaner.tab.tools;
 
 import deskplaner.main.Main;
 import deskplaner.prototypes.Browser;
 import deskplaner.prototypes.Editor;
 import deskplaner.res.Resource;
 import deskplaner.util.Console;
-import deskplaner.util.DeskLayout;
+import deskplaner.util.DeskTab;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -13,7 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
-public class Tools extends DeskLayout {
+public class Tools extends DeskTab {
 	
 	private static int numberOfTools = 1;
 	private static GridPane gridpane;
