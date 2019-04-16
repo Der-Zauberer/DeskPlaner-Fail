@@ -1,7 +1,6 @@
 package deskplaner.tab.dashboard;
 
 import deskplaner.main.Main;
-import deskplaner.res.Resource;
 import deskplaner.util.Console;
 import deskplaner.util.DeskTab;
 import deskplaner.util.DeskWeb;
@@ -46,8 +45,6 @@ public class Dashboard extends DeskTab{
 		addNavigationItem("Notes", e -> Main.getStage().setScene(Main.notes.getScene()));
 		addNavigationItem("Tools", e -> Main.getStage().setScene(Main.tools.getScene()));
 		addNavigationItem("Projects", e -> {});
-		
-		getScene().getStylesheets().add(Resource.getStyleSheet("style.css"));
 		
 	}
 

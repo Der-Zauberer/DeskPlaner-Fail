@@ -2,8 +2,7 @@ package deskplaner.tab.tools;
 
 import deskplaner.main.Main;
 import deskplaner.prototypes.Browser;
-import deskplaner.prototypes.Editor;
-import deskplaner.res.Resource;
+import deskplaner.tools.editor.Editor;
 import deskplaner.util.Console;
 import deskplaner.util.DeskTab;
 import javafx.event.ActionEvent;
@@ -40,11 +39,8 @@ public class Tools extends DeskTab {
 		gridpane.add(new Label("Open"), 4, 0);
 		
 		addToolEntry("Console", 0.1, "André Sommer", "Utilities", e -> new Console());
-		addToolEntry("Editor", 0.1, "André Sommer", "Prototypes", e -> new Editor());
+		addToolEntry("Editor", 0.2, "André Sommer", "Prototypes", e -> new Editor());
 		addToolEntry("Browser", 0.1, "André Sommer", "Prototypes", e -> new Browser());
-		
-		getScene().getStylesheets().add(Resource.getStyleSheet("style.css"));
-		
 	}
 	
 	private void addToolEntry(String name, double version, String author, String type, EventHandler<ActionEvent> event) {

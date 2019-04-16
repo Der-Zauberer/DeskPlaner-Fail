@@ -1,7 +1,6 @@
 package deskplaner.tab.notes;
 
 import deskplaner.main.Main;
-import deskplaner.res.Resource;
 import deskplaner.util.DeskTab;
 import javafx.geometry.Insets;
 import javafx.scene.layout.FlowPane;
@@ -24,10 +23,7 @@ public class Notes extends DeskTab{
 		addNavigationItem("Dashboard", e -> Main.getStage().setScene(Main.dashboard.getScene()));
 		addNavigationItem("Notes", e -> Main.getStage().setScene(Main.notes.getScene()));
 		addNavigationItem("Tools", e -> Main.getStage().setScene(Main.tools.getScene()));
-		addNavigationItem("Projects", e -> {});
-		
-		getScene().getStylesheets().add(Resource.getStyleSheet("style.css"));
-		
+		addNavigationItem("Projects", e -> {});		
 	}
 	
 	public void addNoteCard() {

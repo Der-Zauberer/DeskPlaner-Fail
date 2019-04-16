@@ -1,5 +1,6 @@
 package deskplaner.util;
 
+import deskplaner.res.Resource;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -64,6 +65,7 @@ public class DeskTab {
 			content.setPrefWidth(scene.getWidth() - 250);
 		});
 
+		scene.getStylesheets().add(Resource.getStyleSheet("style.css"));
 	}
 
 	/**
