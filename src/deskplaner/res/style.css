@@ -99,9 +99,11 @@
 }
 
 TextField{
+	-fx-background-insets: 0;
 	-fx-border-radius: 5px;
 	-fx-border-color: #cccccc;
-	-fx-border-width: 2px; 
+	-fx-border-width: 2px;
+	-fx-highlight-fill: #0072e6cc;
 }
 
 TextField:hover, TextField:active{
@@ -109,10 +111,12 @@ TextField:hover, TextField:active{
 }
 
 TextArea{
+	-fx-background-insets: 0;
 	-fx-padding: 0px !important;
 	-fx-border-radius: 5px;
 	-fx-border-color: #cccccc;
-	-fx-border-width: 2px; 
+	-fx-border-width: 2px;
+	-fx-highlight-fill: #0072e6cc;
 }
 
 TextArea:hover, TextField:active{
@@ -149,9 +153,10 @@ Button{
 
 .scroll-bar:horizontal:hover .track ,
 .scroll-bar:horizontal:pressed .track ,
+.scroll-bar:horizontal:focused .track ,
 .scroll-bar:vertical:hover .track ,
 .scroll-bar:vertical:pressed .track ,
-.scroll-bar:vertical:active .track{
+.scroll-bar:vertical:focused .track{
      -fx-background-color: transparent;
  
 }

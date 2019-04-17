@@ -13,5 +13,8 @@ The following features are planned for the first version:
 
 The following versions include a project-specific task board and a tool for creating documentation.
 
-A screenshot of the current status:
+## Screenshots
+
 ![Image](https://github.com/Der-Zauberer/DeskPlaner/blob/master/docs/screenshots/first.png)
+
+![Image](https://github.com/Der-Zauberer/DeskPlaner/blob/master/docs/screenshots/editor.png)

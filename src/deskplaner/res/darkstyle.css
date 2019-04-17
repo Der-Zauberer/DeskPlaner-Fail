@@ -110,10 +110,6 @@ Button{
  
 }
 
-#editor{
-	-fx-border-color: black;
-}
-
 #delete{
 	-fx-background-color: red;
 }
