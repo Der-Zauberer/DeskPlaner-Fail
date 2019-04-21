@@ -7,23 +7,23 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 
 public class Editor {
+	
+	private static EditorStage stage;
 
 	public Editor() {
-		new EditorStage();
+		stage = new EditorStage();
 	}
 
-	protected static void saveFile(Stage primaryStage, TextArea text) {
+	protected static void saveFile(TextArea text) {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Save File");
 		fileChooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt"));
 		fileChooser.setInitialFileName("file.txt");
-		File file = fileChooser.showSaveDialog(primaryStage);
+		File file = fileChooser.showSaveDialog(stage);
 
 		if (file != null) {
 			try {
@@ -36,12 +36,12 @@ public class Editor {
 		}
 	}
 
-	protected static void open(Stage primaryStage, TextArea text) throws IOException {
+	protected static String open(TextArea text) throws IOException {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("open File");
 		fileChooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt"));
 		fileChooser.setInitialFileName("file.txt");
-		File file = fileChooser.showOpenDialog(primaryStage);
+		File file = fileChooser.showOpenDialog(stage);
 
 		if (file != null) {
 			InputStream in = new FileInputStream(file);
@@ -54,6 +54,7 @@ public class Editor {
 			text.setText(out.toString());
 			reader.close();
 		}
-	};
+		return file.getName();
+	}
 
 }

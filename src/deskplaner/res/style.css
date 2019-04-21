@@ -1,8 +1,48 @@
+/* parent and menu */
+
 .root{
 	-fx-background-color: white;
 	-fx-text-fill: black;
 	-fx-focus-color: transparent;
 	-fx-faint-focus-color: transparent;
+}
+
+.tab {
+	-fx-background-radius: 0;
+	-fx-background-color: white;
+	-fx-background-insets: 0 0 0 0,0,0;
+}
+
+.tab-header-area .tab-header-background{
+	-fx-background-color: white;
+}
+
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 0 0;
+    -fx-padding: 0;
+}
+
+.tab-pane{
+    -fx-tab-min-width:100px;
+    -fx-tab-min-height:40px;
+}
+
+.tab-pane .tab:selected{
+    -fx-background-color: #0072e6;
+}
+
+.tab .tab-label{
+    -fx-text-fill: black;
+    -fx-font-size: 15px;
+}
+
+.tab .tab-close-button{
+	-fx-background-color: white;
+}
+
+.tab:selected .tab-label{ 
+    -fx-text-fill: white;
+    -fx-background-color: #0072e6;
 }
 
 .menu{
@@ -65,6 +105,8 @@
 .contentscroll{
 	-fx-background-color: white;
 }
+
+/* componets */
 
 .card{
 	-fx-background-color: rgba(0, 0, 0, 0.1);
