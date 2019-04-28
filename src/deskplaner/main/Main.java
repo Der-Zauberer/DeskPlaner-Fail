@@ -1,9 +1,11 @@
 package deskplaner.main;
 
+import deskplaner.res.Resource;
 import deskplaner.tab.dashboard.Dashboard;
 import deskplaner.tab.notes.Notes;
 import deskplaner.tab.tools.Tools;
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -44,6 +46,7 @@ public class Main extends Application {
 		stage.setMinWidth(1280);
 		
 		Main.stage.setScene(dashboard.getScene());
+		Main.stage.getIcons().add(new Image("/deskplaner/res/logo.png")); 
 		Main.stage.show();
 
 	}
