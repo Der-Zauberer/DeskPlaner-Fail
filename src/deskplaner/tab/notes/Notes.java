@@ -1,11 +1,11 @@
 package deskplaner.tab.notes;
 
 import deskplaner.main.Main;
-import deskplaner.util.DeskTab;
+import deskplaner.util.DeskScene;
 import javafx.geometry.Insets;
 import javafx.scene.layout.FlowPane;
 
-public class Notes extends DeskTab{
+public class Notes extends DeskScene{
 
 	private FlowPane flowpane;
 	

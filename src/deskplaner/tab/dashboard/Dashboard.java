@@ -2,12 +2,12 @@ package deskplaner.tab.dashboard;
 
 import deskplaner.main.Main;
 import deskplaner.util.Console;
-import deskplaner.util.DeskTab;
+import deskplaner.util.DeskScene;
 import deskplaner.util.DeskWeb;
 import deskplaner.util.DeskCard;
 import javafx.scene.layout.GridPane;
 
-public class Dashboard extends DeskTab{
+public class Dashboard extends DeskScene{
 	
 	public Dashboard() {
 		

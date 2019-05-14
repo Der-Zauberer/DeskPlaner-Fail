@@ -14,7 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
-public class DeskTab {
+public class DeskScene {
 
 	private HBox hbox;
 	private Scene scene;
@@ -29,7 +29,7 @@ public class DeskTab {
 	/**
 	 * Create a scene and two vboxes with menu and content area.
 	 */
-	public DeskTab() {
+	public DeskScene() {
 		hbox = new HBox();
 		scene = new Scene(hbox);
 		
@@ -67,7 +67,7 @@ public class DeskTab {
 	/**
 	 * Create a scene and two stackpanes with menu and content area.
 	 */
-	public DeskTab(String title) {
+	public DeskScene(String title) {
 		this();
 		lbTitle.setText(title);
 		content.getChildren().add(header);

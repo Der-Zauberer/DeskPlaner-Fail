@@ -4,7 +4,7 @@ import deskplaner.main.Main;
 import deskplaner.prototypes.Browser;
 import deskplaner.tools.editor.Editor;
 import deskplaner.util.Console;
-import deskplaner.util.DeskTab;
+import deskplaner.util.DeskScene;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
-public class Tools extends DeskTab {
+public class Tools extends DeskScene {
 	
 	private static int numberOfTools = 1;
 	private static GridPane gridpane;

@@ -47,13 +47,16 @@
 
 .menu{
 	-fx-background-color: #0066ff;
+	-fx-min-height: 50px;
 }
 
 .menu Button{
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
 	-fx-background-radius: 5px;
+	-fx-pref-height: 30px;
 	-fx-font-size: 18px;
+	-fx-padding: 0px;
 }
 
 .menu Button:hover{
