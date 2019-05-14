@@ -18,8 +18,9 @@ public class DeskTab {
 
 	private HBox hbox;
 	private Scene scene;
-	private VBox navigation;
 	private VBox content;
+	
+	DeskNavigation navigation;
 
 	private Label lbTitle;
 	private ToolBar header;
@@ -31,18 +32,13 @@ public class DeskTab {
 	public DeskTab() {
 		hbox = new HBox();
 		scene = new Scene(hbox);
-
-		navigation = new VBox();
-		navigation.setAlignment(Pos.TOP_LEFT);
-		navigation.getStyleClass().add("navigation");
-		navigation.setMinWidth(250);
+		
+		navigation = new DeskNavigation("DeskPlaner");
+		
 		content = new VBox();
 		content.setAlignment(Pos.TOP_LEFT);
 		content.getStyleClass().add("content");
 		content.setStyle("-fx-padding: 50px 70px");
-
-		Label navigationTitle = new Label("DeskPlaner");
-		navigation.getChildren().add(navigationTitle);
 
 		placeholder = new HBox();
 		HBox.setHgrow(placeholder, Priority.ALWAYS);
@@ -99,12 +95,8 @@ public class DeskTab {
 	 * @param event Set the event, which is called on click the button.
 	 */
 	public void addNavigationItem(String title, EventHandler<ActionEvent> event) {
-		Button button = new Button(title);
-		button.setPrefHeight(40);
-		button.setPrefWidth(250);
-		button.setAlignment(Pos.CENTER_LEFT);
+		Button button = navigation.addButton(title);
 		button.setOnAction(event);
-		navigation.getChildren().add(button);
 	}
 
 	public void addHeaderItem(String title, EventHandler<ActionEvent> event) {
@@ -120,6 +112,11 @@ public class DeskTab {
 	 */
 	public VBox getNavigation() {
 		return navigation;
+	}
+	
+	public void addNavigation(VBox navigation) {
+		hbox.getChildren().clear();
+		hbox.getChildren().addAll(navigation, content);
 	}
 
 	/**

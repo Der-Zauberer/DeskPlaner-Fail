@@ -19,7 +19,7 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch();
 	}
-
+	
 	public static Dashboard dashboard;
 	public static Notes notes;
 	public static Tools tools;
@@ -33,7 +33,7 @@ public class Main extends Application {
 		Main.stage = stage;
 
 		System.setProperty("prism.lcdtext", "false");
-
+		
 		dashboard = new Dashboard();
 		notes = new Notes();
 		tools = new Tools();

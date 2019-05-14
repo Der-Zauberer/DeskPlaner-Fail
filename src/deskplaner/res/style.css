@@ -82,7 +82,7 @@
 }
 
 .navigation Button:hover{
-	-fx-background-color: rgba(0, 0, 0, 0.1);
+	-fx-background-color: #00000040;
 }
 
 .header Button{
