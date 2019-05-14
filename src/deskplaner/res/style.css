@@ -28,7 +28,7 @@
 }
 
 .tab-pane .tab:selected{
-    -fx-background-color: #0072e6;
+    -fx-background-color: #0066ff;
 }
 
 .tab .tab-label{
@@ -42,11 +42,11 @@
 
 .tab:selected .tab-label{ 
     -fx-text-fill: white;
-    -fx-background-color: #0072e6;
+    -fx-background-color: #0066ff;
 }
 
 .menu{
-	-fx-background-color: #0072e6;
+	-fx-background-color: #0066ff;
 }
 
 .menu Button{
@@ -61,7 +61,7 @@
 }
 
 .navigation{
-	-fx-background-color: #0072e6;
+	-fx-background-color: #0066ff;
 }
 
 .navigation Label{
@@ -75,9 +75,10 @@
 .navigation Button{
 	-fx-background-color: transparent;
 	-fx-text-fill: #ffffff;
-	-fx-background-radius: 0;
+	-fx-background-radius: 5;
 	-fx-font-size: 18px;
 	-fx-padding: 0 40px 0 40px;
+    -fx-background-insets: 0 20px;
 }
 
 .navigation Button:hover{
@@ -135,7 +136,7 @@
 }
 
 #list Button{
-	-fx-background-color: #0072e6;
+	-fx-background-color: #0066ff;
 	-fx-min-width: 80px;
 	-fx-text-fill: white;
 }
@@ -145,11 +146,11 @@ TextField{
 	-fx-border-radius: 5px;
 	-fx-border-color: #cccccc;
 	-fx-border-width: 2px;
-	-fx-highlight-fill: #0072e6cc;
+	-fx-highlight-fill: #0066ffcc;
 }
 
 TextField:hover, TextField:active{
-	-fx-border-color: #0072e6; 
+	-fx-border-color: #0066ff; 
 }
 
 TextArea{
@@ -158,11 +159,11 @@ TextArea{
 	-fx-border-radius: 5px;
 	-fx-border-color: #cccccc;
 	-fx-border-width: 2px;
-	-fx-highlight-fill: #0072e6cc;
+	-fx-highlight-fill: #0066ffcc;
 }
 
 TextArea:hover, TextField:active{
-	-fx-border-color: #0072e6; 
+	-fx-border-color: #0066ff; 
 }
 
 Button{
@@ -170,7 +171,7 @@ Button{
 	-fx-min-height: 30px;
 	-fx-min-width: 60px;
 	-fx-font-size: 15px;
-	-fx-background-color: #0072e6;
+	-fx-background-color: #0066ff;
 	-fx-text-fill: white;
 }
 

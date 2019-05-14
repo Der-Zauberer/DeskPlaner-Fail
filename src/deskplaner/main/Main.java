@@ -1,6 +1,5 @@
 package deskplaner.main;
 
-import deskplaner.res.Resource;
 import deskplaner.tab.dashboard.Dashboard;
 import deskplaner.tab.notes.Notes;
 import deskplaner.tab.tools.Tools;
