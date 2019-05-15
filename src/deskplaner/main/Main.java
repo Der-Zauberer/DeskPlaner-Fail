@@ -3,7 +3,9 @@ package deskplaner.main;
 import deskplaner.tab.dashboard.Dashboard;
 import deskplaner.tab.notes.Notes;
 import deskplaner.tab.tools.Tools;
+import deskplaner.util.DeskNavigation;
 import javafx.application.Application;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -34,9 +36,19 @@ public class Main extends Application {
 
 		System.setProperty("prism.lcdtext", "false");
 		
+		DeskNavigation navigation = new DeskNavigation("DeskPlaner");
+		Button navDashboard = navigation.addButton("Dashboard");
+		Button navNotes = navigation.addButton("Notes");
+		Button navTools = navigation.addButton("Tools");
+		
 		dashboard = new Dashboard();
+		dashboard.addNavigation(navigation);
 		notes = new Notes();
 		tools = new Tools();
+	
+		navDashboard.setOnAction(e -> stage.setScene(dashboard.getScene()));
+		navNotes.setOnAction(e -> stage.setScene(notes.getScene()));
+		navTools.setOnAction(e -> stage.setScene(tools.getScene()));
 
 		stage.setTitle("DeskPlaner");
 		stage.setHeight(720);

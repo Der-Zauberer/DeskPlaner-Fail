@@ -65,6 +65,7 @@
 
 .navigation{
 	-fx-background-color: #0066ff;
+	-fx-effect: dropshadow(three-pass-box, #00000033, 4, 0, 0, 1);
 }
 
 .navigation Label{
@@ -99,7 +100,7 @@
 }
 
 .content{
-	-fx-background-color: white;
+	-fx-background-color: #f2f2f2;
 }
 
 .content Label{
@@ -113,13 +114,11 @@
 /* componets */
 
 .card{
-	-fx-background-color: rgba(0, 0, 0, 0.1);
-	-fx-background-radius: 10px;
+	-fx-background-color: white;
+	-fx-background-radius: 5px;
 	-fx-padding: 10px 20px;
-}
-
-.card:hover{
-	-fx-background-color: rgba(0, 0, 0, 0.2);
+	-fx-effect: dropshadow(three-pass-box, #00000033, 4, 0, 0, 1);
+	
 }
 
 .card Button{

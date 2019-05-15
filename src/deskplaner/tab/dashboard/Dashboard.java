@@ -1,6 +1,5 @@
 package deskplaner.tab.dashboard;
 
-import deskplaner.main.Main;
 import deskplaner.util.Console;
 import deskplaner.util.DeskScene;
 import deskplaner.util.DeskWeb;
@@ -40,11 +39,6 @@ public class Dashboard extends DeskScene{
 		gridpane.add(new DeskCard("Test"), 3, 0);
 		gridpane.add(new DeskCard("Test"), 4, 0);
 		gridpane.add(new DeskCard("Test"), 5, 0);
-		
-		addNavigationItem("Dashboard", e -> Main.getStage().setScene(Main.dashboard.getScene()));
-		addNavigationItem("Notes", e -> Main.getStage().setScene(Main.notes.getScene()));
-		addNavigationItem("Tools", e -> Main.getStage().setScene(Main.tools.getScene()));
-		addNavigationItem("Projects", e -> {});
 		
 	}
 
