@@ -1,9 +1,14 @@
 package deskplaner.main;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import deskplaner.tool.example.Example;
+import deskplaner.utli.Tool;
 
 public class DeskPlaner {
+	
+	private static ArrayList<Tool> tools = new ArrayList<>();
 
 	/**
 	 * This is the main method of the program.<br><br>
@@ -13,9 +18,21 @@ public class DeskPlaner {
 	 * @author André Sommer
 	 */
 	public static void main(String[] args) {
+		registerTool(new Example());
+		enableTools();
 		console();
+		disableTools();
 	}
 	
+	/**
+	 * This method can be used to register tools.<br><br>
+	 * <i>Mit dieser Methode lassen sich Tools registrieren.</i>
+	 * @param tool The tool to be registered<br><i>Das Tool, das registriert werden soll</i>
+	 * @author André Sommer
+	 */
+	public static void registerTool(Tool tool) {
+		tools.add(tool);
+	}
 	
 	/**
 	 * 
@@ -26,6 +43,7 @@ public class DeskPlaner {
 	 * 
 	 * @author André Sommer
 	 */
+	@SuppressWarnings("resource")
 	private static void console() {
 		Scanner scanner = new Scanner(System.in);
 		while (true) {
@@ -34,6 +52,32 @@ public class DeskPlaner {
 			String label = command[0];
 			String args[] = Arrays.copyOfRange(command, 1, command.length);
 			System.out.println("Label: " + label + " Arguments: " + Arrays.toString(args));
+		}
+	}
+	
+	/**
+	 * The method calls all onEnable() methods of the registered tools.<br><br>
+	 * <i>Die Methode ruft alle onEnable() Methoden der Registrierten Tools auf.</i>
+	 * 
+	 * @author André Sommer
+	 */
+	private static void enableTools() {
+		for (Tool tool : tools) {
+			tool.onEnable();
+			System.out.println("[ToolLoader] " + tool.getName() + " successfully loaded!");
+		}
+	}
+	
+	
+	/**
+	 * The method calls all onDisable() methods of the registered tools.<br><br>
+	 * <i>Die Methode ruft alle onDisable() Methoden der Registrierten Tools auf.</i>
+	 * 
+	 * @author André Sommer
+	 */
+	private static void disableTools() {
+		for (Tool tool : tools) {
+			tool.onDisable();
 		}
 	}
 

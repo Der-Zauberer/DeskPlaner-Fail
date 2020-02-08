@@ -7,7 +7,7 @@ public abstract class Tool {
 	
 	/**
 	 * In the constructor the name of the Tool is set and the version is initialized with 1 by default.<br><br>
-	 * <i>Im Konstruktor wird der Name des Tools eingestellt und die Version mit 1 standertmäßig initialisiert.</i>
+	 * <i>Im Konstruktor wird der Name des Tools eingestellt und die Version mit 1 standardmäßig initialisiert.</i>
 	 * 
 	 * @param name The name for the Tool<br><i>Der Name für das Tool</i>
 	 * @author André Sommer
