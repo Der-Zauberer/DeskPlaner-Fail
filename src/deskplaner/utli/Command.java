@@ -5,7 +5,7 @@ public abstract class Command {
 	private String label;
 	
 	/**
-	 * The method "onCommand()" contains the instructions, who describe the function of the command.
+	 * The method "onCommand(String args[])" contains the instructions, who describe the function of the command.
 	 * Not every command has the same function. If you are creating a new command you have to implement the function of the command.
 	 * I don't know why we need a command without a function. So this method must be implemented in every special command.
 	 * The method should return true if the execution of the command was successful. If it wasn't successful the method should return false.<br><br>
@@ -14,9 +14,10 @@ public abstract class Command {
 	 * Ich kann nicht nachvollziehen, warum wir einen Command ohne Funktion benötigen könnten. Daher muss diese Methode in jedem speziellen Command implementiert sein.
 	 * Die Methode soll Wahr (true) zurückgeben, falls der Command erfolgreich ausgeführt wurde. Falls die Ausführung des Commands nicht erfolgreich verlief, soll die Methode den Wert falsch (false) liefern.</i>
 	 * 
+	 * @param args[] The arguments of the command.<br><i>Die Argumente des Befehls.</i>
 	 * @author Paul Leppich
 	 */
-	public abstract boolean onCommand();
+	public abstract boolean onCommand(String args[]);
 	
 	/**
 	 * The method "getLabel()" returns the private Sring "label".<br><br>
