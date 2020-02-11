@@ -1,12 +1,12 @@
 package deskplaner.tool.example;
 
-import deskplaner.utli.Tool;
+import deskplaner.util.Tool;
 
 public class Example extends Tool {
 
 	/**
 	 * @see deskplaner.utli.Tool#Tool()
-	 * @author André Sommer
+	 * @author Andrï¿½ Sommer
 	 */
 	public Example() {
 		super("Example", 1);
@@ -15,7 +15,7 @@ public class Example extends Tool {
 	
 	/**
 	 * @see deskplaner.utli.Tool#onEnable()
-	 * @author André Sommer
+	 * @author Andrï¿½ Sommer
 	 */
 	@Override
 	public void onEnable() {

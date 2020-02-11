@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import deskplaner.tool.example.Example;
-import deskplaner.utli.Tool;
+import deskplaner.util.Tool;
 
 public class DeskPlaner {
 	
@@ -15,7 +15,7 @@ public class DeskPlaner {
 	 * <i>Dies ist die Startmethode des Programms.</i>
 	 * 
 	 * @param args The java start arguments <br><i>Die Java Startargumente</i>
-	 * @author André Sommer
+	 * @author Andrï¿½ Sommer
 	 */
 	public static void main(String[] args) {
 		registerTool(new Example());
@@ -28,7 +28,7 @@ public class DeskPlaner {
 	 * This method can be used to register tools.<br><br>
 	 * <i>Mit dieser Methode lassen sich Tools registrieren.</i>
 	 * @param tool The tool to be registered<br><i>Das Tool, das registriert werden soll</i>
-	 * @author André Sommer
+	 * @author Andrï¿½ Sommer
 	 */
 	public static void registerTool(Tool tool) {
 		tools.add(tool);
@@ -38,10 +38,10 @@ public class DeskPlaner {
 	 * 
 	 * In the method the entered string from the console is split into single words.
 	 * The first word is the label, all other words are stored in args.<br><br>
-	 * <i>In der Metode wird der eingegebene String aus der Konsole in einzelne Wörter aufgeteilt.
-	 * Das erste Wort ist das Label, alle anderen Wörter werden in args gespeichert.<i>
+	 * <i>In der Metode wird der eingegebene String aus der Konsole in einzelne Wï¿½rter aufgeteilt.
+	 * Das erste Wort ist das Label, alle anderen Wï¿½rter werden in args gespeichert.<i>
 	 * 
-	 * @author André Sommer
+	 * @author Andrï¿½ Sommer
 	 */
 	@SuppressWarnings("resource")
 	private static void console() {
@@ -59,7 +59,7 @@ public class DeskPlaner {
 	 * The method calls all onEnable() methods of the registered tools.<br><br>
 	 * <i>Die Methode ruft alle onEnable() Methoden der Registrierten Tools auf.</i>
 	 * 
-	 * @author André Sommer
+	 * @author Andrï¿½ Sommer
 	 */
 	private static void enableTools() {
 		for (Tool tool : tools) {
@@ -73,7 +73,7 @@ public class DeskPlaner {
 	 * The method calls all onDisable() methods of the registered tools.<br><br>
 	 * <i>Die Methode ruft alle onDisable() Methoden der Registrierten Tools auf.</i>
 	 * 
-	 * @author André Sommer
+	 * @author Andrï¿½ Sommer
 	 */
 	private static void disableTools() {
 		for (Tool tool : tools) {
