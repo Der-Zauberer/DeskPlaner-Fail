@@ -3,6 +3,8 @@ package deskplaner.main;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+
+import deskplaner.handler.CommandHandler;
 import deskplaner.tool.example.Example;
 import deskplaner.util.Tool;
 
@@ -51,7 +53,7 @@ public class DeskPlaner {
 			String command[] = input.split(" ");
 			String label = command[0];
 			String args[] = Arrays.copyOfRange(command, 1, command.length);
-			System.out.println("Label: " + label + " Arguments: " + Arrays.toString(args));
+			CommandHandler.executeCommand(label, args);
 		}
 	}
 	

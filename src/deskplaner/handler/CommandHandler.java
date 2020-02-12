@@ -6,7 +6,7 @@ import deskplaner.util.Command;
 
 public class CommandHandler {
 	
-	private static ArrayList<Command> commands = new ArrayList<Command>();
+	private static ArrayList<Command> commands = new ArrayList<>();
 	
 	/**
 	 * The method "addCommand(Command addCommand)" register a command.<br><br>

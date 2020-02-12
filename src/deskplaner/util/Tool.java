@@ -1,5 +1,7 @@
 package deskplaner.util;
 
+import deskplaner.handler.CommandHandler;
+
 public abstract class Tool {
 	
 	private String name;
@@ -34,10 +36,10 @@ public abstract class Tool {
 	 * The method onEnable() is called when the tool is loaded.<br><br>
 	 * <i>Die Methode onEnable() wird beim laden des Tools aufgerufen.</i>
 	 * 
-	 * @author Andr� Sommer
+	 * @author André Sommer
 	 */
 	public void onEnable() {
-		
+	
 	}
 	
 	/**
