@@ -28,7 +28,6 @@ public class CommandHandler {
 	 * @author Paul Leppich
 	 */
 	public static boolean executeCommand(String label, String args[]) {
-		boolean successful = false;
 		for (Command command:commands) {
 			if (command.getLabel().equals(label)) {
 				if (command.onCommand(args)) {

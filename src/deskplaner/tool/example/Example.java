@@ -6,7 +6,7 @@ public class Example extends Tool {
 
 	/**
 	 * @see deskplaner.utli.Tool#Tool()
-	 * @author Andr� Sommer
+	 * @author André Sommer
 	 */
 	public Example() {
 		super("Example", 1);
@@ -15,7 +15,7 @@ public class Example extends Tool {
 	
 	/**
 	 * @see deskplaner.utli.Tool#onEnable()
-	 * @author Andr� Sommer
+	 * @author André Sommer
 	 */
 	@Override
 	public void onEnable() {
