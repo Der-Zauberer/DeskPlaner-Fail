@@ -1,7 +1,5 @@
 package deskplaner.util;
 
-import deskplaner.handler.CommandHandler;
-
 public abstract class Tool {
 	
 	private String name;

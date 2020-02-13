@@ -3,9 +3,8 @@ package deskplaner.main;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-
 import deskplaner.handler.CommandHandler;
-import deskplaner.tool.example.Example;
+import deskplaner.tool.notes.Notes;
 import deskplaner.util.Tool;
 
 public class DeskPlaner {
@@ -20,7 +19,7 @@ public class DeskPlaner {
 	 * @author André Sommer
 	 */
 	public static void main(String[] args) {
-		registerTool(new Example());
+		registerTool(new Notes());
 		enableTools();
 		console();
 		disableTools();
