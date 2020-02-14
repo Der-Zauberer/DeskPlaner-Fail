@@ -3,7 +3,13 @@ package deskplaner.tool.notes;
 import deskplaner.util.Command;
 
 public class NoteCommand implements Command {
-
+	
+	/**
+	 * The method creates, lists or deletes the notes.<br>
+	 *<i>Die Methode erstellt, listet oder löscht die Notizen.</i>
+	 * @author  Jakob Bolenbach
+	 * @see
+	 */
 	@Override
 	public boolean onCommand(String[] args) {
 		if(args.length > 0 && args[0] != null) {
