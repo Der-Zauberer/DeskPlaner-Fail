@@ -2,6 +2,7 @@ package deskplaner.tool.notes;
 
 import java.util.ArrayList;
 
+import deskplaner.handler.CommandHandler;
 import deskplaner.util.Tool;
 
 public class Notes extends Tool {
@@ -16,6 +17,7 @@ public class Notes extends Tool {
 	 */
 	public Notes() {
 		super("Notes", 1);
+		CommandHandler.addCommand(new NoteCommand());
 	}
 
 	/**
@@ -24,7 +26,7 @@ public class Notes extends Tool {
 	 * 
 	 * @author André Sommer
 	 */
-	public void addNote(Note note) {
+	public static void addNote(Note note) {
 		for (Note notes : notes) {
 			if(notes.getTitle().equalsIgnoreCase(note.getTitle())) {
 				return;
@@ -33,16 +35,26 @@ public class Notes extends Tool {
 		notes.add(note);
 	}
 	
-	public void deleteNote(Note note) {
+	public static void deleteNote(Note note) {
 		notes.remove(note);
 	}
 	
-	public void getNote(int index) {
-		notes.get(index);
+	public static Note getNote(int index) {
+		return notes.get(index);
+	}
+	
+	public static Note getNote(String title) {
+		for (Note note : notes) {
+			if(note.getTitle().equalsIgnoreCase(title)) {
+				return note;
+			}
+		}
+		return null;
 	}
 	
 	public static ArrayList<Note> getNotes() {
 		return notes;
 	}
+	
 
 }
