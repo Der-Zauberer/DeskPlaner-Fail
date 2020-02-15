@@ -5,10 +5,10 @@ import deskplaner.util.Command;
 public class NoteCommand implements Command {
 	
 	/**
-	 * The method creates, lists or deletes the notes.<br>
-	 *<i>Die Methode erstellt, listet oder löscht die Notizen.</i>
+	 * The command can creates, lists or deletes the notes.<br>
+	 *<i>Das Kommando kann eine Notiz erstellen, auflisten oder löschen.</i>
+	 *
 	 * @author  Jakob Bolenbach
-	 * @see
 	 */
 	@Override
 	public boolean onCommand(String[] args) {

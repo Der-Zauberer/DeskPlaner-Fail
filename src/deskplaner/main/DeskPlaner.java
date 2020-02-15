@@ -1,5 +1,7 @@
 package deskplaner.main;
 
+import java.io.File;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -54,6 +56,21 @@ public class DeskPlaner {
 			String args[] = Arrays.copyOfRange(command, 1, command.length);
 			CommandHandler.executeCommand(label, args);
 		}
+	}
+	
+	/**
+	 * Return the file location of the executed .jar file.<br><br>
+	 * <i>Gibt den Dateiort der ausgeführten .jar datei zurück.</i>
+	 * 
+	 * @return The location of the executed .jar file.<br><i>Den Speicherort der ausgeführten .jar Datei.</i>
+	 * @author André Sommer
+	 */
+	public static File getDeskPlanerLocation() {
+		try {
+			return new File(DeskPlaner.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());
+		} catch (URISyntaxException exception) {
+		}
+		return null;
 	}
 	
 	/**
