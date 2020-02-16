@@ -18,6 +18,7 @@ public class Notes extends Tool {
 	public Notes() {
 		super("Notes", 1);
 		CommandHandler.addCommand(new NoteCommand());
+		new NoteConfig();
 	}
 
 	/**
@@ -33,10 +34,12 @@ public class Notes extends Tool {
 			}
 		}
 		notes.add(note);
+		NoteConfig.saveNote(note);
 	}
 	
 	public static void deleteNote(Note note) {
 		notes.remove(note);
+		NoteConfig.deleteNote(note);
 	}
 	
 	public static Note getNote(int index) {

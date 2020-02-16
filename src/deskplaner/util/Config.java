@@ -7,7 +7,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-
 import deskplaner.main.DeskPlaner;
 
 public class Config {
@@ -32,7 +31,7 @@ public class Config {
 		String line;
 		while ((line = bufferedreader.readLine()) != null) {
 			String[] configitem = line.split(": ");
-			configitems.add(new ConfigItem(configitem[0], configitem[1]));
+			set(configitem[0], configitem[1]);
 		}
 		bufferedreader.close();
 	}
@@ -49,9 +48,26 @@ public class Config {
 		for(ConfigItem configitem : configitems) {
 			if(configitem.getKey().equals(key)) {
 				configitem.setValue(value);
+				return;
 			}
 		}
 		configitems.add(new ConfigItem(key, value));
+	}
+	
+	/**
+	 *Remove an existing entry in the file with the key.<br><br>
+	 * <i>Löscht einen vorhandenen Eintrag in der Datei mit der Identifikation.</i>
+	 * 
+	 * @param key The unique identity of the entry<br><i>Die einmalige Identität des Eintrags</i>
+	 * @author André Sommer
+	 */
+	public void remove(String key) {
+		for(ConfigItem configitem : configitems) {
+			if(configitem.getKey().equals(key)) {
+				configitems.remove(configitem);
+				return;
+			}
+		}
 	}
 	
 	/**
@@ -72,7 +88,18 @@ public class Config {
 	}
 	
 	/**
-	 * Save the entrys in the file.<br><br><i>Speichert die Einträge in der Datei.</i>
+	 * Returns all entries in the file.<br><br>
+	 * <i>Gibt alle Einträge der Datei zurück.<i/>
+	 * 
+	 * @return The entries of the file<br><i>Die Einträge der Datei.</i>
+	 * @author André Sommer
+	 */
+	public ArrayList<ConfigItem> getAllEntrys() {
+		return configitems;
+	}
+	
+	/**
+	 * Save the entries in the file.<br><br><i>Speichert die Einträge in der Datei.</i>
 	 * 
 	 * @throws IOException
 	 * @author André Sommer
@@ -87,32 +114,4 @@ public class Config {
 		bufferedwriter.close();
 	}
 
-}
-
-class ConfigItem {
-	
-	private String key;
-	private String value;
-	
-	public ConfigItem(String key, String value) {
-		this.key = key;
-		this.value = value;
-	}
-	
-	public void setKey(String key) {
-		this.key = key;
-	}
-	
-	public void setValue(String value) {
-		this.value = value;
-	}
-	
-	public String getKey() {
-		return key;
-	}
-	
-	public String getValue() {
-		return value;
-	}
-	
 }
