@@ -15,7 +15,14 @@ public class NoteCommand implements Command {
 		if(args.length > 0 && args[0] != null) {
 			if(args[0].equalsIgnoreCase("create")) {
 				if(args.length > 1 && args[1] != null && args[2] != null) {
-					Notes.addNote(new Note(args[1], args[2]));
+					String text = "";
+					for (int i = 2; i < args.length; i++) {
+						text += args[i];
+						if (i < args.length - 1) {
+							text += " ";
+						}
+					}
+					Notes.addNote(new Note(args[1], text));
 					return true;
 				}			
 			} else if(args[0].equalsIgnoreCase("list")) {
