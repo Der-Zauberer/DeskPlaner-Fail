@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import deskplaner.main.DeskPlaner;
 
-public class Config {
+public class Configuration {
 	
 	private ArrayList<ConfigItem> configitems = new ArrayList<>();
 	private File file;
@@ -23,7 +23,7 @@ public class Config {
 	 * @throws IOException
 	 * @author André Sommer
 	 */
-	public Config(String folder, String filename) throws IOException {
+	public Configuration(String folder, String filename) throws IOException {
 		new File(DeskPlaner.getDeskPlanerLocation().getParent(), "DeskPlaner\\" + folder).mkdir();
 		file = new File(DeskPlaner.getDeskPlanerLocation().getParent() + "\\DeskPlaner\\" + folder, filename);
 		FileReader filereader = new FileReader(file);
@@ -104,7 +104,7 @@ public class Config {
 	 * @throws IOException
 	 * @author André Sommer
 	 */
-	public void save() throws IOException {
+	public void saveEntriesInFile() throws IOException {
 		FileWriter filewriter = new FileWriter(file);
 		BufferedWriter bufferedwriter = new BufferedWriter(filewriter);
 		for (ConfigItem configitem : configitems) {

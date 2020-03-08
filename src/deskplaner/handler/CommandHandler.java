@@ -10,7 +10,7 @@ public class CommandHandler {
 	
 	/**
 	 * The method "addCommand(Command addCommand)" register a command.<br><br>
-	 * <i>Die Methode "addCommand(Command addCommand)" regestriert den Command.</i>
+	 * <i>Die Methode "addCommand(Command addCommand)" registriert den Command.</i>
 	 * 
 	 * @param addCommand the Command that you want to add.<br><i>Der Command, den Sie hinzufügen wollen.</i>
 	 * @author Paul Leppich
@@ -27,6 +27,7 @@ public class CommandHandler {
 	 * @param args[] the arguments that the command should use.<br><i>Die Argumente, die der Command verwenden soll.</i>
 	 * @author Paul Leppich
 	 */
+	
 	public static boolean executeCommand(String label, String args[]) {
 		for (Command command:commands) {
 			if (command.getLabel().equals(label)) {

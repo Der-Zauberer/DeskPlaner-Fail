@@ -5,7 +5,7 @@ import deskplaner.util.Command;
 public class NoteCommand implements Command {
 	
 	/**
-	 * The command can creates, lists or deletes the notes.<br>
+	 * The command creates, lists or deletes the notes.<br>
 	 *<i>Das Kommando kann eine Notiz erstellen, auflisten oder löschen.</i>
 	 *
 	 * @author  Jakob Bolenbach
@@ -24,7 +24,8 @@ public class NoteCommand implements Command {
 					}
 					Notes.addNote(new Note(args[1], text));
 					return true;
-				}			
+				}
+				
 			} else if(args[0].equalsIgnoreCase("list")) {
 				for (Note note : Notes.getNotes()) {
 					System.out.println(note);
@@ -36,7 +37,6 @@ public class NoteCommand implements Command {
 					return true;
 				}
 			}	
-				
 		}
 		return false;
 	}

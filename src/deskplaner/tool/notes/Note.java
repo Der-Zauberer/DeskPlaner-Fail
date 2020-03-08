@@ -33,6 +33,11 @@ public class Note {
 		this.title = title;
 	}
 	
+	
+	public void setText(String text) {
+		this.text = text;
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -40,11 +45,6 @@ public class Note {
 	public String getText() {
 		return text;
 	}
-	
-	public void setText(String text) {
-		this.text = text;
-	}
-
 	@Override
 	public String toString() {
 		return "Note [title=" + title + ", text=" + text + "]";
