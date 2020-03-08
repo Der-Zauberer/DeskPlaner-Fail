@@ -8,10 +8,15 @@ import java.util.Scanner;
 import deskplaner.handler.CommandHandler;
 import deskplaner.tool.notes.Notes;
 import deskplaner.util.Tool;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
-public class DeskPlaner {
+public class DeskPlaner extends Application {
 	
 	private static ArrayList<Tool> tools = new ArrayList<>();
+	private static Stage stage;
 
 	/**
 	 * This is the main method of the program.<br><br>
@@ -24,7 +29,7 @@ public class DeskPlaner {
 		registerTool(new Notes());
 		enableTools();
 		console();
-		disableTools();
+		launch();
 	}
 	
 	/**
@@ -48,14 +53,35 @@ public class DeskPlaner {
 	 */
 	@SuppressWarnings("resource")
 	private static void console() {
-		Scanner scanner = new Scanner(System.in);
-		while (true) {
-			String input = scanner.nextLine();
-			String command[] = input.split(" ");
-			String label = command[0];
-			String args[] = Arrays.copyOfRange(command, 1, command.length);
-			CommandHandler.executeCommand(label, args);
-		}
+		new Thread(() -> {
+			Scanner scanner = new Scanner(System.in);
+			while (true) {
+				String input = scanner.nextLine();
+				String command[] = input.split(" ");
+				String label = command[0];
+				String args[] = Arrays.copyOfRange(command, 1, command.length);
+				CommandHandler.executeCommand(label, args);
+			}
+		}).start();
+	}
+	
+	/**
+	 * The method start the javafx window.<br><br>
+	 * <i>Die Methode startet das Javafx Fesnter.</i>
+	 * 
+	 * @param stage The stage of the window<br><i>Die Stage des Fensters</i>
+	 * @throws Exception
+	 */
+	@Override
+	public void start(Stage stage) throws Exception {
+		VBox vbox = new VBox();
+		Scene scene = new Scene(vbox);
+		
+		DeskPlaner.stage = stage;
+		stage.setTitle("DeskPlaner");
+		stage.setMaximized(true);
+		stage.setScene(scene);
+		stage.show();
 	}
 	
 	/**
@@ -86,17 +112,8 @@ public class DeskPlaner {
 		}
 	}
 	
-	
-	/**
-	 * The method calls all onDisable() methods of the registered tools.<br><br>
-	 * <i>Die Methode ruft alle onDisable() Methoden der Registrierten Tools auf.</i>
-	 * 
-	 * @author André Sommer
-	 */
-	private static void disableTools() {
-		for (Tool tool : tools) {
-			tool.onDisable();
-		}
+	public static Stage getStage() {
+		return stage;
 	}
 
 }
