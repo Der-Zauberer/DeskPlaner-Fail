@@ -21,7 +21,7 @@ public class DeskPlaner {
 	 * @author André Sommer
 	 */
 	public static void main(String[] args) {
-		registerTool(new Notes());
+		registerTool(new Notes()) ;
 		enableTools();
 		splitStringIntoSingleWords();
 		disableTools();

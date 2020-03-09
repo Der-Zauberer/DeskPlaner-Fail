@@ -21,7 +21,7 @@ public class NoteConfiguration {
 	 */
 	public static void saveNote(Note note) {
 		configuration.set(note.getTitle(), note.getText());
-		writeNotesIntoConfigurationFile();
+		writeNotesToConfig();
 	}
 
 	/**
@@ -35,7 +35,7 @@ public class NoteConfiguration {
 	 */
 	public static void deleteNote(Note note) {
 		configuration.remove(note.getTitle());
-		writeNotesIntoConfigurationFile();
+		writeNotesToConfig();
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class NoteConfiguration {
 	 * 
 	 * @author André Sommer
 	 */
-	private static void writeNotesIntoConfigurationFile() {
+	private static void writeNotesToConfig() {
 		try {
 			configuration.saveEntriesInFile();
 		} catch (IOException exception) {
