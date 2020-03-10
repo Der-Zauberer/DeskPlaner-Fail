@@ -23,7 +23,7 @@ public class DeskPlaner {
 	public static void main(String[] args) {
 		registerTool(new Notes()) ;
 		enableTools();
-		splitStringIntoSingleWords();
+		splitCommandForConsole();
 		disableTools();
 	}
 	
@@ -63,7 +63,7 @@ public class DeskPlaner {
 	 * @author André Sommer
 	 */
 	@SuppressWarnings("resource")
-	private static void splitStringIntoSingleWords() {
+	private static void splitCommandForConsole() {
 		Scanner scanner = new Scanner(System.in);
 		while (true) {
 			String input = scanner.nextLine();
