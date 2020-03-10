@@ -1,0 +1,31 @@
+.root{
+	-fx-background-color: white;
+}
+
+.navigation{
+	-fx-background-color: #0080ff;
+}
+
+.navigation Label{
+	-fx-font-size: 40px;
+	-fx-text-fill: white;
+	-fx-padding: 40px;
+}
+
+.navigation Button{
+	-fx-background-color: transparent;
+	-fx-pref-height: 40px;
+	-fx-pref-width: 230px;
+	-fx-font-size: 18px;
+	-fx-border: none;
+	-fx-background-radius: 5px;
+	-fx-text-fill: white;
+}
+
+.navigation .active{
+	-fx-background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navigation Button:hover{
+	-fx-background-color: rgba(0, 0, 0, 0.1);
+}
