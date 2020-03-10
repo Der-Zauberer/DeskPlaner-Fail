@@ -37,6 +37,38 @@ public class Configuration {
 	}
 	
 	/**
+	 *Remove an existing entry in the file with the key.<br><br>
+	 * <i>Löscht einen vorhandenen Eintrag in der Datei mit der Identifikation.</i>
+	 * 
+	 * @param key The unique identity of the entry<br><i>Die einmalige Identität des Eintrags</i>
+	 * @author André Sommer
+	 */
+	public void remove(String key) {
+		for(ConfigItem configitem : configitems) {
+			if(configitem.getKey().equals(key)) {
+				configitems.remove(configitem);
+				return;
+			}
+		}
+	}
+	
+	/**
+	 * Save the entries in the file.<br><br><i>Speichert die Einträge in der Datei.</i>
+	 * 
+	 * @throws IOException
+	 * @author André Sommer
+	 */
+	public void saveEntriesInFile() throws IOException {
+		FileWriter filewriter = new FileWriter(file);
+		BufferedWriter bufferedwriter = new BufferedWriter(filewriter);
+		for (ConfigItem configitem : configitems) {
+			bufferedwriter.write(configitem.getKey() + ": " + configitem.getValue());
+			bufferedwriter.newLine();
+		}
+		bufferedwriter.close();
+	}
+	
+	/**
 	 * Create a new entry or edit an existing entry in the file with key and a value.<br><br>
 	 * <i>Erstellt einen neuen Eintrag oder ändert einen vorhandenen Eintrag in der Datei mit der Identifikation und einem Wert.</i>
 	 * 
@@ -52,22 +84,6 @@ public class Configuration {
 			}
 		}
 		configitems.add(new ConfigItem(key, value));
-	}
-	
-	/**
-	 *Remove an existing entry in the file with the key.<br><br>
-	 * <i>Löscht einen vorhandenen Eintrag in der Datei mit der Identifikation.</i>
-	 * 
-	 * @param key The unique identity of the entry<br><i>Die einmalige Identität des Eintrags</i>
-	 * @author André Sommer
-	 */
-	public void remove(String key) {
-		for(ConfigItem configitem : configitems) {
-			if(configitem.getKey().equals(key)) {
-				configitems.remove(configitem);
-				return;
-			}
-		}
 	}
 	
 	/**
@@ -96,22 +112,6 @@ public class Configuration {
 	 */
 	public ArrayList<ConfigItem> getAllEntrys() {
 		return configitems;
-	}
-	
-	/**
-	 * Save the entries in the file.<br><br><i>Speichert die Einträge in der Datei.</i>
-	 * 
-	 * @throws IOException
-	 * @author André Sommer
-	 */
-	public void saveEntriesInFile() throws IOException {
-		FileWriter filewriter = new FileWriter(file);
-		BufferedWriter bufferedwriter = new BufferedWriter(filewriter);
-		for (ConfigItem configitem : configitems) {
-			bufferedwriter.write(configitem.getKey() + ": " + configitem.getValue());
-			bufferedwriter.newLine();
-		}
-		bufferedwriter.close();
 	}
 
 }
