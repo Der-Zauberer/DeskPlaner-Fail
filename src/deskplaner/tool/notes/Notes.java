@@ -17,13 +17,14 @@ public class Notes extends Tool {
 	 */
 	public Notes() {
 		super("Notes", 1);
-		CommandHandler.addCommand(new NoteCommand());
-		new NoteConfig();
+		CommandHandler.registerCommand(new NoteCommand());
+		NoteConfiguration.initialize();
 	}
 
 	/**
 	 * Add a Note to the tool of Notes. A note will only be added if no other note with the same name exists.<br><br>
-	 * <i>Fügt eine neue Notiz zum Tool Notes hinzu. Eine Notiz wird nur hinzugefügt, wenn keine weitere Notiz mit dem gleichen Namen existiert.</i>
+	 * <i>Fügt eine neue Notiz zum Tool Notes hinzu. 
+	 * Eine Notiz wird nur hinzugefügt, wenn keine weitere Notiz mit dem gleichen Namen existiert.</i>
 	 * 
 	 * @author André Sommer
 	 */
@@ -34,12 +35,12 @@ public class Notes extends Tool {
 			}
 		}
 		notes.add(note);
-		NoteConfig.saveNote(note);
+		NoteConfiguration.saveNote(note);
 	}
 	
 	public static void deleteNote(Note note) {
 		notes.remove(note);
-		NoteConfig.deleteNote(note);
+		NoteConfiguration.deleteNote(note);
 	}
 	
 	public static Note getNote(int index) {

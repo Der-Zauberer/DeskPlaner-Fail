@@ -21,9 +21,9 @@ public class DeskPlaner {
 	 * @author André Sommer
 	 */
 	public static void main(String[] args) {
-		registerTool(new Notes());
+		registerTool(new Notes()) ;
 		enableTools();
-		console();
+		splitCommandForConsole();
 		disableTools();
 	}
 	
@@ -38,16 +38,32 @@ public class DeskPlaner {
 	}
 	
 	/**
+	 * Return the file location of the executed .jar file.<br><br>
+	 * <i>Gibt den Dateiort der ausgeführten .jar datei zurück.</i>
+	 * 
+	 * @return The location of the executed .jar file.<br><i>Den Speicherort der ausgeführten .jar Datei.</i>
+	 * @author André Sommer
+	 */
+	
+	public static File getDeskPlanerLocation() {
+		try {
+			return new File(DeskPlaner.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());
+		} catch (URISyntaxException exception) {
+		}
+		return null;
+	}
+	
+	/**
 	 * 
 	 * In the method the entered string from the console is split into single words.
 	 * The first word is the label, all other words are stored in args.<br><br>
-	 * <i>In der Metode wird der eingegebene String aus der Konsole in einzelne Wörter aufgeteilt.
+	 * <i>In der Methode wird der eingegebene String aus der Konsole in einzelne Wörter aufgeteilt.
 	 * Das erste Wort ist das Label, alle anderen Wörter werden in args gespeichert.<i>
 	 * 
 	 * @author André Sommer
 	 */
 	@SuppressWarnings("resource")
-	private static void console() {
+	private static void splitCommandForConsole() {
 		Scanner scanner = new Scanner(System.in);
 		while (true) {
 			String input = scanner.nextLine();
@@ -58,20 +74,7 @@ public class DeskPlaner {
 		}
 	}
 	
-	/**
-	 * Return the file location of the executed .jar file.<br><br>
-	 * <i>Gibt den Dateiort der ausgeführten .jar datei zurück.</i>
-	 * 
-	 * @return The location of the executed .jar file.<br><i>Den Speicherort der ausgeführten .jar Datei.</i>
-	 * @author André Sommer
-	 */
-	public static File getDeskPlanerLocation() {
-		try {
-			return new File(DeskPlaner.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());
-		} catch (URISyntaxException exception) {
-		}
-		return null;
-	}
+	
 	
 	/**
 	 * The method calls all onEnable() methods of the registered tools.<br><br>

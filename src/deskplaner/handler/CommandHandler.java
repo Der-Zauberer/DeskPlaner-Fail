@@ -1,7 +1,6 @@
 package deskplaner.handler;
 
 import java.util.ArrayList;
-
 import deskplaner.util.Command;
 
 public class CommandHandler {
@@ -9,14 +8,14 @@ public class CommandHandler {
 	private static ArrayList<Command> commands = new ArrayList<>();
 	
 	/**
-	 * The method "addCommand(Command addCommand)" register a command.<br><br>
-	 * <i>Die Methode "addCommand(Command addCommand)" regestriert den Command.</i>
+	 * The method register a new command.<br><br>
+	 * <i>Die Methode registiert einen neuen Command</i>
 	 * 
-	 * @param addCommand the Command that you want to add.<br><i>Der Command, den Sie hinzufügen wollen.</i>
+	 * @param command which should be added.<br><i>Der Command, der hinzugefügt werden soll.</i>
 	 * @author Paul Leppich
 	 */
-	public static void addCommand(Command addCommand) {
-		commands.add(addCommand);
+	public static void registerCommand(Command command) {
+		commands.add(command);
 	}
 	
 	/**
@@ -27,8 +26,9 @@ public class CommandHandler {
 	 * @param args[] the arguments that the command should use.<br><i>Die Argumente, die der Command verwenden soll.</i>
 	 * @author Paul Leppich
 	 */
+	
 	public static boolean executeCommand(String label, String args[]) {
-		for (Command command:commands) {
+		for (Command command : commands) {
 			if (command.getLabel().equals(label)) {
 				if (command.onCommand(args)) {
 					return true;
