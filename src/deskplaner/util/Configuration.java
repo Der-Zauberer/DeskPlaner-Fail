@@ -6,12 +6,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.HashMap;
+
 import deskplaner.main.DeskPlaner;
 
 public class Configuration {
 	
-	private ArrayList<ConfigItem> configitems = new ArrayList<>();
+	private HashMap<String, String> entries = new HashMap<>();
 	private File file;
 	
 	/**
@@ -44,11 +45,8 @@ public class Configuration {
 	 * @author André Sommer
 	 */
 	public void remove(String key) {
-		for(ConfigItem configitem : configitems) {
-			if(configitem.getKey().equals(key)) {
-				configitems.remove(configitem);
-				return;
-			}
+		if(entries.containsKey(key)) {
+			entries.remove(key);
 		}
 	}
 	
@@ -61,8 +59,8 @@ public class Configuration {
 	public void saveEntriesInFile() throws IOException {
 		FileWriter filewriter = new FileWriter(file);
 		BufferedWriter bufferedwriter = new BufferedWriter(filewriter);
-		for (ConfigItem configitem : configitems) {
-			bufferedwriter.write(configitem.getKey() + ": " + configitem.getValue());
+		for(String entry : entries.keySet()) {
+			bufferedwriter.write(entry + ": " + entries.get(entry));
 			bufferedwriter.newLine();
 		}
 		bufferedwriter.close();
@@ -77,13 +75,7 @@ public class Configuration {
 	 * @author André Sommer
 	 */
 	public void set(String key, String value) {
-		for(ConfigItem configitem : configitems) {
-			if(configitem.getKey().equals(key)) {
-				configitem.setValue(value);
-				return;
-			}
-		}
-		configitems.add(new ConfigItem(key, value));
+		entries.put(key, value);
 	}
 	
 	/**
@@ -95,10 +87,8 @@ public class Configuration {
 	 * @author André Sommer
 	 */
 	public String get(String key) {
-		for (ConfigItem configitem : configitems) {
-			if(configitem.getKey().equals(key)) {
-				return configitem.getValue();
-			}
+		if(entries.containsKey(key)) {
+			return entries.get(key);
 		}
 		return null;
 	}
@@ -110,8 +100,8 @@ public class Configuration {
 	 * @return The entries of the file<br><i>Die Einträge der Datei.</i>
 	 * @author André Sommer
 	 */
-	public ArrayList<ConfigItem> getAllEntrys() {
-		return configitems;
+	public HashMap<String, String> getAllEntries() {
+		return entries;
 	}
 
 }

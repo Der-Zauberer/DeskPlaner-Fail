@@ -17,8 +17,8 @@ public class Notes extends Tool {
 	 */
 	public Notes() {
 		super("Notes", 1);
-		CommandHandler.addCommand(new NoteCommand());
-		new NoteConfiguration();
+		CommandHandler.registerCommand(new NoteCommand());
+		NoteConfiguration.initialize();
 	}
 
 	/**
