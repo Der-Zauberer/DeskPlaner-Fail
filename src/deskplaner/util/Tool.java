@@ -2,6 +2,7 @@ package deskplaner.util;
 
 import java.util.ArrayList;
 import deskplaner.gui.DeskScene;
+import javafx.scene.Scene;
 
 public abstract class Tool {
 	
@@ -58,6 +59,7 @@ public abstract class Tool {
 	 * Add new DeskScene to the tool.<br><br>
 	 * <i>Fügt neue DeskScene zum Tool hinzu</i>
 	 * 
+	 * @author André Sommer
 	 * @param deskstage The DeskStage to be registered<br><i>Die DeskStage, die hinzugefügt werden soll</i>
 	 */
 	public void addDeskScene(DeskScene deskscene) {
@@ -66,10 +68,38 @@ public abstract class Tool {
 	
 	/**
 	 * Get a DeskScene by index.<br><br>
-	 * <i>Gibt die DeskScene über die den indes zurück.</i>
+	 * <i>Gibt die DeskScene über die den index zurück.</i>
+	 * 
+	 * @author André Sommer
+	 * @return The DeskScene by index<br><i>Die DeskScene über den index</i>
 	 */
-	public void getDeskScene(int index) {
-		scenes.get(index);
+	public DeskScene getDeskScene(int index) {
+		return scenes.get(index);
+	}
+	
+	/**
+	 * Get the main scene of the tool.<br><br>
+	 * <i>Gibt die Hauptszene des Tools zurück.</i>
+	 * 
+	 * @author André Sommer
+	 * @return The mainscene of the tool<br><i>Die Hauptszene des Tools</i>
+	 */
+	public Scene getMainScene() {
+		return scenes.get(0).getScene();
+	}
+	
+	/**
+	 * Check if the tool have a scene.<br><br>
+	 * <i>Überprüft, ob das Tool eine Szene beinhaltet.</i>
+	 * 
+	 * @author André Sommer
+	 * @return If scene exists<br><i>Wenn die Szene existiert</i>
+	 */
+	public boolean hasScene()  {
+		if(scenes.get(0) != null) {
+			return true;
+		}
+		return false; 
 	}
 	
 	public String getName() {

@@ -5,11 +5,13 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-import deskplaner.gui.DeskScene;
+
+import deskplaner.gui.Navigation;
 import deskplaner.handler.CommandHandler;
 import deskplaner.tool.notes.Notes;
 import deskplaner.util.Tool;
 import javafx.application.Application;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class DeskPlaner extends Application {
@@ -75,7 +77,12 @@ public class DeskPlaner extends Application {
 	public void start(Stage stage) throws Exception {
 		stage.setTitle("DeskPlaner");
 		stage.setMaximized(true);
-		stage.setScene(new DeskScene().getScene());
+		Navigation.initialize();
+		for(Tool tool : tools) {
+			if(tool.hasScene()) {
+				stage.setScene(tool.getMainScene());
+			}
+		}
 		stage.show();
 	}
 	
