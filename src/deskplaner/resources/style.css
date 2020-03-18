@@ -1,5 +1,6 @@
 .root{
 	-fx-background-color: white;
+	-fx-font-size: 18px;
 }
 
 .navigation{
@@ -28,4 +29,16 @@
 
 .navigation Button:hover{
 	-fx-background-color: rgba(0, 0, 0, 0.1);
+}
+
+.note{
+	-fx-background-color: #e6e6e6;
+	-fx-background-radius: 5px;
+	-fx-min-width: 200px;
+	-fxmin-height: 20px;
+	-fx-padding: 20px;
+}
+
+.note .note-title{
+	-fx-font-weight: bold;
 }

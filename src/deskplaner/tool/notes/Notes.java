@@ -18,8 +18,8 @@ public class Notes extends Tool {
 	public Notes() {
 		super("Notes", 1);
 		CommandHandler.addCommand(new NoteCommand());
-		addDeskScene(new NoteScene());
 		new NoteConfig();
+		addDeskScene(new NoteScene());
 	}
 
 	/**

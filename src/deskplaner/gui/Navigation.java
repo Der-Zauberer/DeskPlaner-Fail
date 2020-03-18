@@ -27,9 +27,7 @@ public class Navigation {
 		Label label = new Label("DeskPlaner");
 		vbox.getChildren().add(label);
 		for(Tool tool : DeskPlaner.getRegistredTools()) {
-			System.out.println(tool.getName());
 			if(tool.hasScene()) {
-				System.out.println(tool.hasScene());
 				createButton(tool.getName(), e-> {
 					DeskPlaner.getStage().setScene(tool.getMainScene());
 				});
