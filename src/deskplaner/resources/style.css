@@ -5,6 +5,7 @@
 
 .navigation{
 	-fx-background-color: #0080ff;
+	
 }
 
 .navigation Label{
@@ -41,4 +42,12 @@
 
 .note .note-title{
 	-fx-font-weight: bold;
+}
+.tool-bar {
+	-fx-base: #0080ff;
+    -fx-font-size: 12pt;
+    -fx-background-color:
+        linear-gradient(to bottom, derive(-fx-base,-30%), derive(-fx-base,-60%)),
+        linear-gradient(to bottom,  #0080ff);
+   
 }
