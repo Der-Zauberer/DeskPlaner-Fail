@@ -25,13 +25,6 @@ public class DeskScene {
 		scene.getStylesheets().add(Resource.getStyleSheet("style.css"));
 	}
 	
-	/**
-	 * Get the VBox for the content of the Scene.<br><br>
-	 * <i>Gebe die VBox für den Seiteninhalt zurück.</i>
-	 * 
-	 * @author André Sommer
-	 * @return The VBox for the content of the scene<br><i>Die VBox für den Inhalt der Scene</i>
-	 */
 	public VBox getContent() {
 		return content;
 	}

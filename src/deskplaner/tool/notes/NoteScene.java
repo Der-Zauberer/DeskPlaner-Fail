@@ -14,6 +14,7 @@ public class NoteScene extends DeskScene {
 
 	public NoteScene() {
 		super();
+
 		ToolBar toolbar = new ToolBar();
 		getContent().getChildren().add(toolbar);
 		toolbar.getItems().add(new Button("create"));
@@ -21,7 +22,7 @@ public class NoteScene extends DeskScene {
 		toolbar.getItems().add(new Button("delete"));
 		toolbar.getItems().add(new Separator());
 		toolbar.getItems().add(new Button("edit"));
-		toolbar.getStylesheets().add(Resource.getStyleSheet("style.css"));
+
 		FlowPane flowpane = new FlowPane();
 		flowpane.setHgap(20);
 		flowpane.setVgap(20);
@@ -38,9 +39,6 @@ public class NoteScene extends DeskScene {
 			vbox.getChildren().add(new Label(note.getText()));
 			flowpane.getChildren().add(vbox);
 		}
-//		VBox vbox = new VBox(); 
-//		vbox.getStyleClass().add("note");
-//		getContent().getChildren().add(vbox);
 
 	}
 
