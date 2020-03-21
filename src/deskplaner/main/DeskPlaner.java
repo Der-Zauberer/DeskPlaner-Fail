@@ -82,6 +82,7 @@ public class DeskPlaner extends Application {
 			}
 		}
 		stage.show();
+		stage.setOnCloseRequest(e -> System.exit(0));
 	}
 	
 	/**

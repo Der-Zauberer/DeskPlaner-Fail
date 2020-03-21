@@ -1,7 +1,6 @@
 package deskplaner.tool.notes;
 
 import deskplaner.gui.DeskScene;
-import deskplaner.resources.Resource;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
