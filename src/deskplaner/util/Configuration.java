@@ -1,14 +1,12 @@
 package deskplaner.util;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
-
 import deskplaner.main.DeskPlaner;
 
 public class Configuration {
@@ -26,8 +24,13 @@ public class Configuration {
 	 * @author André Sommer
 	 */
 	public Configuration(String folder, String filename) throws IOException {
-		new File(DeskPlaner.getDeskPlanerLocation().getParent(), "DeskPlaner\\" + folder).mkdir();
-		path = Paths.get(DeskPlaner.getDeskPlanerLocation().getParent() + "\\DeskPlaner\\" + folder, filename);
+		String pathstring = DeskPlaner.getDeskPlanerLocation() + "\\DeskPlaner\\" + folder;
+		Path directory = Paths.get(pathstring);
+		if(!Files.exists(directory)) {
+			Files.createDirectories(directory);
+		}
+		path = Paths.get(pathstring, filename);
+		Files.createFile(path);
 		BufferedReader reader = Files.newBufferedReader(path, Charset.forName("UTF-8"));
 		String line;
 		while((line = reader.readLine()) != null){
