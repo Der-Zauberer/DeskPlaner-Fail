@@ -56,7 +56,6 @@ public class NoteScene extends DeskScene {
 		button.setOnAction(e -> {
 			setNote(vbox, textfield.getText(), textarea.getText());
 			if(Notes.getNote(title) != null) {
-				System.out.println("true");
 				Note note = Notes.getNote(title);
 				Notes.deleteNote(note);
 				note.setTitle(textfield.getText());
@@ -64,7 +63,6 @@ public class NoteScene extends DeskScene {
 				Notes.addNote(note);
 			} else {
 				Notes.addNote(new Note(textfield.getText(), textarea.getText()));
-				System.out.println("false");
 			}
 		});
 		vbox.getChildren().addAll(textfield, textarea, button);
