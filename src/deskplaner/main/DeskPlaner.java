@@ -5,13 +5,18 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+
+import deskplaner.gui.Navigation;
 import deskplaner.handler.CommandHandler;
 import deskplaner.tool.notes.Notes;
 import deskplaner.util.Tool;
+import javafx.application.Application;
+import javafx.stage.Stage;
 
-public class DeskPlaner {
+public class DeskPlaner extends Application {
 	
 	private static ArrayList<Tool> tools = new ArrayList<>();
+	private static Stage stage;
 
 	/**
 	 * This is the main method of the program.<br><br>
@@ -23,7 +28,8 @@ public class DeskPlaner {
 	public static void main(String[] args) {
 		registerTool(new Notes()) ;
 		enableTools();
-		splitCommandForConsole();
+		console();
+		launch();
 		disableTools();
 	}
 	
@@ -37,6 +43,10 @@ public class DeskPlaner {
 		tools.add(tool);
 	}
 	
+	public static ArrayList<Tool> getRegistredTools() {
+		return tools;
+	}
+	
 	/**
 	 * Return the file location of the executed .jar file.<br><br>
 	 * <i>Gibt den Dateiort der ausgeführten .jar datei zurück.</i>
@@ -44,7 +54,6 @@ public class DeskPlaner {
 	 * @return The location of the executed .jar file.<br><i>Den Speicherort der ausgeführten .jar Datei.</i>
 	 * @author André Sommer
 	 */
-	
 	public static File getDeskPlanerLocation() {
 		try {
 			return new File(DeskPlaner.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());
@@ -63,18 +72,40 @@ public class DeskPlaner {
 	 * @author André Sommer
 	 */
 	@SuppressWarnings("resource")
-	private static void splitCommandForConsole() {
-		Scanner scanner = new Scanner(System.in);
-		while (true) {
-			String input = scanner.nextLine();
-			String command[] = input.split(" ");
-			String label = command[0];
-			String args[] = Arrays.copyOfRange(command, 1, command.length);
-			CommandHandler.executeCommand(label, args);
-		}
+	private static void console() {
+		new Thread(() -> {
+			Scanner scanner = new Scanner(System.in);
+			while (true) {
+				String input = scanner.nextLine();
+				String command[] = input.split(" ");
+				String label = command[0];
+				String args[] = Arrays.copyOfRange(command, 1, command.length);
+				CommandHandler.executeCommand(label, args);
+			}
+		}).start();
 	}
 	
-	
+	/**
+	 * The method start the javafx window.<br><br>
+	 * <i>Die Methode startet das Javafx Fesnter.</i>
+	 * 
+	 * @param stage The stage of the window<br><i>Die Stage des Fensters</i>
+	 * @throws Exception
+	 */
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		stage = primaryStage;
+		stage.setTitle("DeskPlaner");
+		stage.setMaximized(true);
+		Navigation.initialize();
+		for(Tool tool : tools) {
+			if(tool.hasScene()) {
+				stage.setScene(tool.getMainScene());
+			}
+		}
+		stage.show();
+		stage.setOnCloseRequest(e -> System.exit(0));
+	}
 	
 	/**
 	 * The method calls all onEnable() methods of the registered tools.<br><br>
@@ -100,6 +131,10 @@ public class DeskPlaner {
 		for (Tool tool : tools) {
 			tool.onDisable();
 		}
+	}
+	
+	public static Stage getStage() {
+		return stage;
 	}
 
 }

@@ -30,7 +30,9 @@ public class Configuration {
 			Files.createDirectories(directory);
 		}
 		path = Paths.get(pathstring, filename);
-		Files.createFile(path);
+		if(!Files.exists(path)) {
+			Files.createFile(path);
+		}
 		BufferedReader reader = Files.newBufferedReader(path, Charset.forName("UTF-8"));
 		String line;
 		while((line = reader.readLine()) != null){

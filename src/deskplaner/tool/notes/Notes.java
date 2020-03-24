@@ -19,6 +19,7 @@ public class Notes extends Tool {
 		super("Notes", 1);
 		CommandHandler.registerCommand(new NoteCommand());
 		NoteConfiguration.initialize();
+		addDeskScene(new NoteScene());
 	}
 
 	/**
