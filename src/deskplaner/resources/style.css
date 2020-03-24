@@ -36,14 +36,21 @@
 .note{
 	-fx-background-color: #e6e6e6;
 	-fx-background-radius: 5px;
-	-fx-min-width: 200px;
-	-fxmin-height: 20px;
+	-fx-min-width: 300px;
+	-fx-max-width: 300px;
+	-fx-min-height: 20px;
 	-fx-padding: 20px;
 }
 
 .note .note-title{
 	-fx-font-weight: bold;
 }
+
+.note Button{
+	-fx-min-witdh: 340px;
+	-fx-padding-top: 20px;
+}
+
 .tool-bar {
 	-fx-base: #0080ff;
     -fx-font-size: 12pt;

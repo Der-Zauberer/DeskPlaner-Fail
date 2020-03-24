@@ -39,6 +39,12 @@ public class Notes extends Tool {
 		NoteConfiguration.saveNote(note);
 	}
 	
+	/**
+	 * Delete a existing note.<br><br>
+	 * <i>Löscht eine vorhandene Notiz.</i>
+	 * 
+	 * @author André Sommer
+	 */
 	public static void deleteNote(Note note) {
 		notes.remove(note);
 		NoteConfiguration.deleteNote(note);

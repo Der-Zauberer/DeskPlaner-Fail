@@ -16,7 +16,7 @@ public class Configuration {
 	
 	/**
 	 * Creates a new folder and a new file if it does not exist and opens it.<br><br>
-	 * <i>Erstellt einen neuen Ordner und eine neue Datei, wenn diese nich nicht existiert und öffnet diese.</i>
+	 * <i>Erstellt einen neuen Ordner und eine neue Datei, wenn diese nicht existiert und öffnet diese.</i>
 	 * 
 	 * @param folder The folder of the file inside the DeskPlaner folder<br><i>Der Ordner der Datei innerhalb des DeskPlaner Ordners</i>
 	 * @param filename The name of the file<br><i>The name of the folder</i>
