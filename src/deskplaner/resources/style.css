@@ -47,12 +47,13 @@
 }
 
 .note Button{
+	-fx-background-color: #e6e6e6;
 	-fx-min-witdh: 340px;
 	-fx-padding-top: 20px;
 }
 
 .tool-bar {
-	-fx-base: #0080ff;
+	-fx-background-color: #A9A9A9;
     -fx-font-size: 12pt;
    
 }

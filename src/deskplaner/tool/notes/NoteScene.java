@@ -24,8 +24,10 @@ public class NoteScene extends DeskScene {
 		Pane pane = new Pane();
         HBox.setHgrow(pane, Priority.SOMETIMES);
 		ToolBar toolbar = new ToolBar();
+		TextField searchField = new TextField();
 		getContent().getChildren().add(toolbar);
 		toolbar.getItems().add(pane);
+		toolbar.getItems().add(searchField);
 		toolbar.getItems().add(btcreate);
 		flowpane = new FlowPane();
 		flowpane.setHgap(20);
@@ -77,5 +79,5 @@ public class NoteScene extends DeskScene {
 		button.setOnAction(e -> {editNote(vbox, labeltitle.getText(), labeltext.getText());});
 		vbox.getChildren().addAll(labeltitle, labeltext, button);
 	}
-
+	
 }
