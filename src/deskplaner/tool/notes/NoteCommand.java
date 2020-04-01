@@ -36,7 +36,7 @@ public class NoteCommand implements Command {
 					return true;
 				} else if(args[0].equalsIgnoreCase("search")) {
 					if (args.length > 1 && args[1] != null) {
-						for (Note note : Notes.seachNote(args[1])) {
+						for (Note note : Notes.searchNote(args[1])) {
 							System.out.println(note.toString());
 						}
 					}

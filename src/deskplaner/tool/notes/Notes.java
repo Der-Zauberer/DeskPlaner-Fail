@@ -58,7 +58,7 @@ public class Notes extends Tool {
 	 * 
 	 * @author Paul Leppich
 	 */
-	public static ArrayList<Note> seachNote(String text) {
+	public static ArrayList<Note> searchNote(String text) {
 		ArrayList<Note> searchResult = new ArrayList<>();
 		for (Note note : notes) {
 			if (note.getTitle().contains(text)||note.getText().contains(text)) {

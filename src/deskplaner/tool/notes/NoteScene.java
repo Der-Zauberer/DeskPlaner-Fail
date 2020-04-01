@@ -1,7 +1,11 @@
 package deskplaner.tool.notes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import deskplaner.gui.DeskScene;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -45,8 +49,19 @@ public class NoteScene extends DeskScene {
 	}
 	
 	private void searchNote(String text) {
-		for (Note note : Notes.seachNote(text)) {
-			System.out.println(note.toString());
+		List<Node> nodelist = flowpane.getChildren();
+		flowpane.getChildren().removeAll(nodelist);
+		ArrayList<Note> notes;
+		if(text.equalsIgnoreCase("")) {
+			notes = Notes.getNotes();
+		} else {
+			notes = Notes.searchNote(text);
+		}
+		for (Note note : notes) {
+			VBox vbox = new VBox();
+			vbox.getStyleClass().add("note");
+			flowpane.getChildren().add(vbox);
+			setNote(vbox, note.getTitle(), note.getText());
 		}
 	}
 	
