@@ -25,6 +25,7 @@ public class NoteScene extends DeskScene {
         HBox.setHgrow(pane, Priority.SOMETIMES);
 		ToolBar toolbar = new ToolBar();
 		TextField searchField = new TextField();
+		searchField.setOnAction(searchEvent -> {searchNote(searchField.getText());});
 		getContent().getChildren().add(toolbar);
 		toolbar.getItems().add(pane);
 		toolbar.getItems().add(searchField);
@@ -40,6 +41,12 @@ public class NoteScene extends DeskScene {
 			vbox.getStyleClass().add("note");
 			flowpane.getChildren().add(vbox);
 			setNote(vbox, note.getTitle(), note.getText());
+		}
+	}
+	
+	private void searchNote(String text) {
+		for (Note note : Notes.seachNote(text)) {
+			System.out.println(note.toString());
 		}
 	}
 	

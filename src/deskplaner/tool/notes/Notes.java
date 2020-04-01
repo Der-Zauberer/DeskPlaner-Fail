@@ -50,6 +50,24 @@ public class Notes extends Tool {
 		NoteConfiguration.deleteNote(note);
 	}
 	
+	/**
+	 * Return all notes who contain the text.<br><br>
+	 * <i>Gibt alle Notizen zurück, die den Text beinhalten.</i>
+	 * 
+	 * @param text the searched text.<br><i>Der gesuchte Text.</i>
+	 * 
+	 * @author Paul Leppich
+	 */
+	public static ArrayList<Note> seachNote(String text) {
+		ArrayList<Note> searchResult = new ArrayList<>();
+		for (Note note : notes) {
+			if (note.getTitle().contains(text)||note.getText().contains(text)) {
+				searchResult.add(note);
+			}
+		}
+		return searchResult;
+	}
+	
 	public static Note getNote(int index) {
 		return notes.get(index);
 	}

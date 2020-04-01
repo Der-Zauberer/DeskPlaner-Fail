@@ -5,10 +5,10 @@ import deskplaner.util.Command;
 public class NoteCommand implements Command {
 	
 	/**
-	 * The command creates, lists or deletes the notes.<br>
-	 * <i>Das Kommando kann eine Notiz erstellen, auflisten oder löschen.</i>
+	 * The command creates, lists, deletes or search the notes.<br>
+	 * <i>Das Kommando kann eine Notiz erstellen, auflisten, löschen oder suchen.</i>
 	 *
-	 * @author Jakob Bolenbach
+	 * @author Jakob Bolenbach, Paul Leppich
 	 */
 	@Override
 	public boolean onCommand(String[] args) {
@@ -33,6 +33,13 @@ public class NoteCommand implements Command {
 			} else if(args[0].equalsIgnoreCase("delete")) {
 				if(args.length > 1 && args[1] != null && Notes.getNote(args[1]) != null) {
 					Notes.deleteNote(Notes.getNote(args[1]));
+					return true;
+				} else if(args[0].equalsIgnoreCase("search")) {
+					if (args.length > 1 && args[1] != null) {
+						for (Note note : Notes.seachNote(args[1])) {
+							System.out.println(note.toString());
+						}
+					}
 					return true;
 				}
 			}	
