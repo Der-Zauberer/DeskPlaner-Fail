@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 import deskplaner.gui.Navigation;
 import deskplaner.handler.CommandHandler;
+import deskplaner.tool.dashboard.Dashboard;
 import deskplaner.tool.notes.Notes;
 import deskplaner.util.Tool;
 import javafx.application.Application;
@@ -26,7 +27,9 @@ public class DeskPlaner extends Application {
 	 * @author André Sommer
 	 */
 	public static void main(String[] args) {
-		registerTool(new Notes()) ;
+		registerTool(new Notes());
+		registerTool(new Dashboard());
+		
 		enableTools();
 		console();
 		launch();

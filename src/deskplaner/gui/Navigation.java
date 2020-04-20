@@ -2,6 +2,8 @@ package deskplaner.gui;
 
 import java.util.ArrayList;
 import deskplaner.main.DeskPlaner;
+import deskplaner.resources.Resource;
+import deskplaner.tool.notes.NoteScene;
 import deskplaner.util.Tool;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -29,7 +31,10 @@ public class Navigation {
 		for(Tool tool : DeskPlaner.getRegistredTools()) {
 			if(tool.hasScene()) {
 				createButton(tool.getName(), e-> {
-					DeskPlaner.getStage().setScene(tool.getMainScene());
+					if (DeskPlaner.getStage().getScene()!=tool.getMainScene()) {
+						tool.getDeskScene(0).linkNavigationAgain();
+						DeskPlaner.getStage().setScene(tool.getMainScene());
+					}
 				});
 			}
 		}
