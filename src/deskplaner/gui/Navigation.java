@@ -10,30 +10,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
-public class Navigation {
+public class Navigation extends VBox{
 	
-	private static VBox vbox = new VBox();
 	private static ArrayList<Button> buttons = new ArrayList<>();
-	
-	/**
-	 * The initialize function has to be called before the navigation can be used.<br><br>
-	 * <i>Die Initialisierungsmethode muss vor der Benutzung der Navigation aufgerufen werden.</i>
-	 * 
-	 * @author André Sommer
-	 */
-	public static void initialize() {
-		vbox.setMinWidth(250);
-		vbox.getStyleClass().add("navigation");
-		Label label = new Label("DeskPlaner");
-		vbox.getChildren().add(label);
-		for(Tool tool : DeskPlaner.getRegistredTools()) {
-			if(tool.hasScene()) {
-				createButton(tool.getName(), e-> {
-					DeskPlaner.getStage().setScene(tool.getMainScene());
-				});
-			}
-		}
-	}
 	
 	/**
 	 * Return the VBox of the navigation menu.<br><br>
@@ -42,8 +21,33 @@ public class Navigation {
 	 * @author André Sommer
 	 * @return The VBox of the Navigation menu<br><i>Die VBox der Navigationsleiste</i>
 	 */
-	public static VBox getVbox() {
-		return vbox;
+	public Navigation() {
+		this.setMinWidth(250);
+		this.getStyleClass().add("navigation");
+		Label label = new Label("DeskPlaner");
+		this.getChildren().add(label);
+		updateButtons();
+	}
+	
+	/**
+	 * Update the buttons of the Navigation.<br><br>
+	 * <i>Aktualisiert die Buttons der Navigation.</i>
+	 * 
+	 * @author André Sommer
+	 */
+	public void updateButtons() {
+		for(Button button : buttons) {
+			this.getChildren().remove(button);
+		}
+		buttons.clear();
+		for(Tool tool : DeskPlaner.getRegistredTools()) {
+			if(tool.hasScene()) {
+				createButton(this, tool.getName(), e-> {
+					DeskPlaner.getStage().setScene(tool.getMainScene());
+					setActiveButton(tool.getName());
+				});
+			}
+		}
 	}
 	
 	/**
@@ -63,7 +67,7 @@ public class Navigation {
 		}
 	}
 	
-	private static void createButton(String name, EventHandler<ActionEvent> event) {
+	private static void createButton(VBox vbox, String name, EventHandler<ActionEvent> event) {
 		Button button = new Button(name);
 		button.setAlignment(Pos.CENTER_LEFT);
 		button.setTranslateX(20);

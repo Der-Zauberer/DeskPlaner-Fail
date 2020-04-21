@@ -33,7 +33,7 @@
 	-fx-background-color: rgba(0, 0, 0, 0.1);
 }
 
-.note{
+.box{
 	-fx-background-color: #e6e6e6;
 	-fx-background-radius: 5px;
 	-fx-min-width: 300px;
@@ -42,11 +42,13 @@
 	-fx-padding: 20px;
 }
 
-.note .note-title{
-	-fx-font-weight: bold;
-}
+.h1{-fx-font-size: 40px; -fx-padding: 0 0 20 0;}
+.h2{-fx-font-size: 25px; -fx-padding: 0 0 20 0;}
+.h3{-fx-font-size: 20px; -fx-padding: 0 0 20 0;}
+.h4{-fx-font-size: 18px; -fx-font-weight: bold;}
+.h5{-fx-font-size: 16px; -fx-font-weight: bold;}
 
-.note Button{
+.box Button{
 	-fx-background-color: #e6e6e6;
 	-fx-min-witdh: 340px;
 	-fx-padding-top: 20px;

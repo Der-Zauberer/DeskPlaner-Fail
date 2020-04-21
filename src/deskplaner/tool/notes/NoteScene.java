@@ -42,7 +42,7 @@ public class NoteScene extends DeskScene {
 		getContent().getChildren().add(flowpane);
 		for (Note note : Notes.getNotes()) {
 			VBox vbox = new VBox();
-			vbox.getStyleClass().add("note");
+			vbox.getStyleClass().add("box");
 			flowpane.getChildren().add(vbox);
 			setNote(vbox, note.getTitle(), note.getText());
 		}
@@ -59,7 +59,7 @@ public class NoteScene extends DeskScene {
 		}
 		for (Note note : notes) {
 			VBox vbox = new VBox();
-			vbox.getStyleClass().add("note");
+			vbox.getStyleClass().add("box");
 			flowpane.getChildren().add(vbox);
 			setNote(vbox, note.getTitle(), note.getText());
 		}
@@ -67,7 +67,7 @@ public class NoteScene extends DeskScene {
 	
 	private void createNote() {
 		VBox vbox = new VBox();
-		vbox.getStyleClass().add("note");
+		vbox.getStyleClass().add("box");
 		flowpane.getChildren().add(vbox);
 		editNote(vbox, "Title", "Text");
 	}
@@ -95,7 +95,7 @@ public class NoteScene extends DeskScene {
 	private void setNote(VBox vbox, String title, String text) {
 		vbox.getChildren().clear();
 		Label labeltitle = new Label(title);
-		labeltitle.getStyleClass().add("note-title");
+		labeltitle.getStyleClass().add("h4");
 		Label labeltext = new Label(text);
 		Button button = new Button("Edit");
 		button.setOnAction(e -> {editNote(vbox, labeltitle.getText(), labeltext.getText());});

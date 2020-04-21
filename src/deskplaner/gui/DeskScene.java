@@ -9,6 +9,7 @@ public class DeskScene {
 	
 	private Scene scene;
 	private VBox content;
+	private Navigation navigation;
 	
 	/**
 	 * Create a scene with navigation and content area.<br><br>
@@ -19,7 +20,8 @@ public class DeskScene {
 	public DeskScene() {
 		HBox root = new HBox();
 		scene = new Scene(root);
-		root.getChildren().add(Navigation.getVbox());
+		navigation = new Navigation();
+		root.getChildren().add(navigation);
 		content = new VBox();
 		root.getChildren().add(content);
 		scene.getStylesheets().add(Resource.getStyleSheet("style.css"));
@@ -30,6 +32,7 @@ public class DeskScene {
 	}
 	
 	public Scene getScene() {
+		navigation.updateButtons();
 		return scene;
 	}
 

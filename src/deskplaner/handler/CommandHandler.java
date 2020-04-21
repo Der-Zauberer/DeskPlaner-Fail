@@ -26,7 +26,6 @@ public class CommandHandler {
 	 * @param args[] the arguments that the command should use.<br><i>Die Argumente, die der Command verwenden soll.</i>
 	 * @author Paul Leppich
 	 */
-	
 	public static boolean executeCommand(String label, String args[]) {
 		for (Command command : commands) {
 			if (command.getLabel().equals(label)) {
@@ -40,5 +39,16 @@ public class CommandHandler {
 		}
 		System.out.println("Error: Command not found!");
 		return false;
+	}
+	
+	/**
+	 * Return the registred commands.<br><br>
+	 * <i>Gibt die registrierten commands zurück.</i>
+	 * 
+	 * @return the registred commands<br><i>Die registrierten Commands</i>
+	 * @author André Sommer
+	 */
+	public static ArrayList<Command> getCommands() {
+		return commands;
 	}
 }
