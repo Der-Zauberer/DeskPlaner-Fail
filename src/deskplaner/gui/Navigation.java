@@ -6,6 +6,7 @@ import deskplaner.util.Tool;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
@@ -36,8 +37,14 @@ public class Navigation extends VBox{
 	 * @author André Sommer
 	 */
 	public void updateButtons() {
-		for(Button button : buttons) {
-			this.getChildren().remove(button);
+		ArrayList<Node> nodes = new ArrayList<>();
+		for(Node node : this.getChildren()) {
+			if(node.getStyleClass().contains("button")) {
+				nodes.add(node);
+			}
+		}
+		for(Node node : nodes) {
+			this.getChildren().remove(node);
 		}
 		buttons.clear();
 		for(Tool tool : DeskPlaner.getRegistredTools()) {
