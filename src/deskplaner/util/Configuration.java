@@ -1,12 +1,19 @@
 package deskplaner.util;
 
-import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import org.json.simple.JSONArray;
+
+
 import deskplaner.main.DeskPlaner;
 
 public class Configuration {
@@ -21,23 +28,28 @@ public class Configuration {
 	 * @param folder The folder of the file inside the DeskPlaner folder<br><i>Der Ordner der Datei innerhalb des DeskPlaner Ordners</i>
 	 * @param filename The name of the file<br><i>The name of the folder</i>
 	 * @throws IOException
-	 * @author André Sommer
+	 * @author André Sommer, Paul Leppich
 	 */
 	public Configuration(String folder, String filename) throws IOException {
-		String pathstring = DeskPlaner.getDeskPlanerLocation() + "\\DeskPlaner\\" + folder;
+		String pathstring = DeskPlaner.getDeskPlanerLocation() + "/DeskPlaner/" + folder;
 		Path directory = Paths.get(pathstring);
 		if(!Files.exists(directory)) {
 			Files.createDirectories(directory);
 		}
+		filename = filename + ".json";
 		path = Paths.get(pathstring, filename);
 		if(!Files.exists(path)) {
 			Files.createFile(path);
 		}
-		BufferedReader reader = Files.newBufferedReader(path, Charset.forName("UTF-8"));
-		String line;
-		while((line = reader.readLine()) != null){
-			String[] configitem = line.split(": ");
-			set(configitem[0], configitem[1]);
+		FileReader reader = new FileReader(path.toString(), Charset.forName("UTF-8"));
+		JSONParser jsonParser = new JSONParser();
+		try {
+			Object data = jsonParser.parse(reader);
+			JSONArray entriesArray = (JSONArray) data;
+			entriesArray.forEach(entry -> set((JSONObject) entry));
+			
+		} catch (IOException | ParseException e) {
+			e.printStackTrace();
 		}
 	}
 	
@@ -58,14 +70,17 @@ public class Configuration {
 	 * Save the entries in the file.<br><br><i>Speichert die Einträge in der Datei.</i>
 	 * 
 	 * @throws IOException
-	 * @author André Sommer
+	 * @author André Sommer, Paul Leppich
 	 */
 	public void saveEntriesInFile() throws IOException {
-		String string = "";
+		JSONArray entriesArray = new JSONArray();
 		for (String entry : entries.keySet()) {
-			string += entry + ": " + entries.get(entry) + "\n";
+			JSONObject entryObject = new JSONObject();
+			entryObject.put("key", entry);
+			entryObject.put("value", entries.get(entry));
+			entriesArray.add(entryObject);
 		}
-		Files.write(path, string.getBytes());
+		Files.write(path, entriesArray.toJSONString().getBytes());
 	}
 	
 	/**
@@ -78,6 +93,17 @@ public class Configuration {
 	 */
 	public void set(String key, String value) {
 		entries.put(key, value);
+	}
+	
+	/**
+	 * Create a new entry or edit an existing entry in the list(HashMap) by using a json-object.<br><br>
+	 * <i>Erstellt einen neuen Eintrag oder ändert einen vorhandenen Eintrag in der Liste(HashMap) unter Nutzung eines json-Objketes.</i>
+	 * 
+	 * @param entry The new entry.<br><i>Der neue Eintrag.</i>
+	 * @author Paul Leppich
+	 */
+	private void set(JSONObject entry) {
+		entries.put((String) entry.get("key"), (String) entry.get("value"));
 	}
 	
 	/**

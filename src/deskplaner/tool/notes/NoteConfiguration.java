@@ -15,7 +15,7 @@ public class NoteConfiguration {
 	 */
 	public static void initialize() {
 		try {
-			config = new Configuration("Notes", "notes.txt");
+			config = new Configuration("Notes", "notes");
 		} catch (IOException exception) {
 			exception.printStackTrace();
 		}
