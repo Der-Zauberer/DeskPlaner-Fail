@@ -9,7 +9,7 @@ import javafx.scene.layout.VBox;
 
 public class SettingsScene extends DeskScene{
 	
-	public SettingsScene() {
+	 public SettingsScene() {
 		VBox vbox = new VBox();
 		vbox.setPadding(new Insets(40));
 		Label label = new Label("Commands");
@@ -22,7 +22,7 @@ public class SettingsScene extends DeskScene{
 			commandbox.getStyleClass().add("box");
 			commandbox.getChildren().add(new Label(command.getLabel()));
 			vbox.getChildren().add(commandbox);
-		}
-	}
+		} 
+	} 
 
 }

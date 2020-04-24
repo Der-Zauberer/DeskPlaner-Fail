@@ -41,7 +41,14 @@
 	-fx-min-height: 20px;
 	-fx-padding: 20px;
 }
-
+.CBox{
+	-fx-background-color: #CECECE;
+	-fx-background-radius: 5px;
+	-fx-min-width: 233px;
+	-fx-max-width: 233px;
+	-fx-min-height: 937px;
+	-fx-padding: 30px;
+}
 .h1{-fx-font-size: 40px; -fx-padding: 0 0 20 0;}
 .h2{-fx-font-size: 25px; -fx-padding: 0 0 20 0;}
 .h3{-fx-font-size: 20px; -fx-padding: 0 0 20 0;}
@@ -55,7 +62,7 @@
 }
 
 .tool-bar {
-	-fx-background-color: #A9A9A9;
+	-fx-background-color: #EAEAEA;
     -fx-font-size: 12pt;
    
 }

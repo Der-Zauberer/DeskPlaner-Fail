@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import deskplaner.handler.CommandHandler;
+import deskplaner.tool.calendar.Calendar;
 import deskplaner.tool.notes.Notes;
 import deskplaner.tool.settings.Settings;
 import deskplaner.util.Tool;
@@ -27,6 +28,7 @@ public class DeskPlaner extends Application {
 	public static void main(String[] args) {
 		registerTool(new Notes()) ;
 		registerTool(new Settings());
+		registerTool(new Calendar());
 		enableTools();
 		console();
 		launch();
@@ -87,7 +89,7 @@ public class DeskPlaner extends Application {
 	
 	/**
 	 * The method start the javafx window.<br><br>
-	 * <i>Die Methode startet das Javafx Fesnter.</i>
+	 * <i>Die Methode startet das Javafx Fenster.</i>
 	 * 
 	 * @param stage The stage of the window<br><i>Die Stage des Fensters</i>
 	 * @throws Exception
