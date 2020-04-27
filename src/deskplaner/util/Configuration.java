@@ -1,4 +1,4 @@
-package deskplaner.util;
+package src.deskplaner.util;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -31,25 +31,28 @@ public class Configuration {
 	 * @author André Sommer, Paul Leppich
 	 */
 	public Configuration(String folder, String filename) throws IOException {
-		String pathstring = DeskPlaner.getDeskPlanerLocation() + "/DeskPlaner/" + folder;
-		Path directory = Paths.get(pathstring);
+		Path directory = Paths.get(DeskPlaner.getDeskPlanerLocation().toString(), "DeskPlaner", folder);
 		if(!Files.exists(directory)) {
 			Files.createDirectories(directory);
 		}
 		filename = filename + ".json";
-		path = Paths.get(pathstring, filename);
+		path = Paths.get(directory.toString(), filename);
 		if(!Files.exists(path)) {
 			Files.createFile(path);
+			return;
 		}
 		FileReader reader = new FileReader(path.toString(), Charset.forName("UTF-8"));
-		JSONParser jsonParser = new JSONParser();
-		try {
-			Object data = jsonParser.parse(reader);
-			JSONArray entriesArray = (JSONArray) data;
-			entriesArray.forEach(entry -> set((JSONObject) entry));
-			
-		} catch (IOException | ParseException e) {
-			e.printStackTrace();
+		if (reader.read()!=-1) {
+			reader = new FileReader(path.toString(), Charset.forName("UTF-8"));
+			JSONParser jsonParser = new JSONParser();
+			try {
+				Object data = jsonParser.parse(reader);
+				JSONArray entriesArray = (JSONArray) data;
+				entriesArray.forEach(entry -> set((JSONObject) entry));
+				
+			} catch (IOException | ParseException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -80,6 +83,7 @@ public class Configuration {
 			entryObject.put("value", entries.get(entry));
 			entriesArray.add(entryObject);
 		}
+		
 		Files.write(path, entriesArray.toJSONString().getBytes());
 	}
 	
