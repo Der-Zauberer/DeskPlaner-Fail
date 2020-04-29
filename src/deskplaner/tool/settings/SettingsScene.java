@@ -12,9 +12,9 @@ public class SettingsScene extends DeskScene{
 	 public SettingsScene() {
 		VBox vbox = new VBox();
 		vbox.setPadding(new Insets(40));
-		Label label = new Label("Commands");
-		label.getStyleClass().add("h2");
-		vbox.getChildren().add(label);
+		Label commandslabel = new Label("Commands");
+		commandslabel.getStyleClass().add("h2");
+		vbox.getChildren().add(commandslabel);
 		getContent().getChildren().add(vbox);
 		for(Command command : CommandHandler.getCommands()) {
 			VBox commandbox = new VBox();
@@ -22,7 +22,12 @@ public class SettingsScene extends DeskScene{
 			commandbox.getStyleClass().add("box");
 			commandbox.getChildren().add(new Label(command.getLabel()));
 			vbox.getChildren().add(commandbox);
-		} 
+		}
+		Label timelabel = new Label("Date and Time");
+		timelabel.getStyleClass().add("h2");
+		timelabel.getStyleClass().add("hheader");
+		vbox.getChildren().add(timelabel);
+		vbox.getChildren().add(new Label(Settings.getTime()));
 	} 
 
 }

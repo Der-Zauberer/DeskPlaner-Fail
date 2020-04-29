@@ -55,6 +55,8 @@
 .h4{-fx-font-size: 18px; -fx-font-weight: bold;}
 .h5{-fx-font-size: 16px; -fx-font-weight: bold;}
 
+.hheader{-fx-padding: 40 0 20 0;}
+
 .box Button{
 	-fx-background-color: #e6e6e6;
 	-fx-min-witdh: 340px;
