@@ -6,7 +6,6 @@
 .navigation{
 	-fx-background-color: #0080ff;
 	-fx-min-width: 250px;
-	
 }
 
 .navigation Label{
@@ -41,6 +40,7 @@
 	-fx-min-height: 20px;
 	-fx-padding: 20px;
 }
+
 .CBox{
 	-fx-background-color: white;
 	-fx-background-radius: 5px;
@@ -66,5 +66,11 @@
 .tool-bar {
 	-fx-background-color: #EAEAEA;
     -fx-font-size: 12pt;
-   
+}
+
+.notelabel {
+	-fx-background-radius: 3px;
+	-fx-padding: 0 5 0 5;
+	-fx-text-fill: white;
+	-fx-background-color: black;
 }
