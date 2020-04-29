@@ -26,9 +26,9 @@ public class DeskPlaner extends Application {
 	 * @author André Sommer
 	 */
 	public static void main(String[] args) {
-		registerTool(new Notes()) ;
-		registerTool(new Settings());
+		registerTool(new Notes());
 		registerTool(new Calendar());
+		registerTool(new Settings());
 		enableTools();
 		console();
 		launch();

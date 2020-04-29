@@ -1,13 +1,12 @@
-package src.deskplaner.util;
+package deskplaner.util;
 
-import java.io.FileReader;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
-
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -41,17 +40,17 @@ public class Configuration {
 			Files.createFile(path);
 			return;
 		}
-		FileReader reader = new FileReader(path.toString(), Charset.forName("UTF-8"));
+		//FileReader reader = new FileReader(path.toString());
+		BufferedReader reader = Files.newBufferedReader(path, Charset.forName("UTF-8"));
 		if (reader.read()!=-1) {
-			reader = new FileReader(path.toString(), Charset.forName("UTF-8"));
+			reader = Files.newBufferedReader(path, Charset.forName("UTF-8"));
 			JSONParser jsonParser = new JSONParser();
 			try {
 				Object data = jsonParser.parse(reader);
 				JSONArray entriesArray = (JSONArray) data;
 				entriesArray.forEach(entry -> set((JSONObject) entry));
-				
-			} catch (IOException | ParseException e) {
-				e.printStackTrace();
+			} catch (IOException | ParseException exception) {
+				exception.printStackTrace();
 			}
 		}
 	}
