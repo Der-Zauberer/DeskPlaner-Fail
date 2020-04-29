@@ -1,7 +1,10 @@
 package deskplaner.tool.calendar;
 
+import java.util.ArrayList;
+
 import deskplaner.gui.DeskScene;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToolBar;
@@ -12,7 +15,6 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 
 public class CalendarScene extends DeskScene{
-	//VBox monday,tuesday, wednessday, thursday, friday, saturday, sunday ;
 	
 	private static VBox[] vbox = new VBox[7]; 
 	
@@ -50,14 +52,16 @@ public class CalendarScene extends DeskScene{
 		vbox[position].getStyleClass().add("CBox");
 	}
 	
-//	private void deleteLastWeek() {
-//		ArrayList<Node> childrens = new ArrayList<>();
-//		for(Node node : hbox.getChildren()) {
-//			childrens.add((Node) node);  
-//		}
-//		for(Node node : childrens) {
-//			hbox.getChildren().remove(node);
-//		}
-//	}
+	private void deleteLastWeek() {
+		for (int i = 0; i < vbox.length; i++) {
+			ArrayList<Node> childrens = new ArrayList<>();
+			for(Node node : vbox[i].getChildren()) {
+			  childrens.add(node);
+			}
+			for(Node node : childrens) {
+				vbox[i].getChildren().remove(node);
+			}
+		}
+	}
 	
 }
