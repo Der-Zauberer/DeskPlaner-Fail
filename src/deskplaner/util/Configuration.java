@@ -1,18 +1,15 @@
 package deskplaner.util;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.json.simple.JSONArray;
-
-
 import deskplaner.main.DeskPlaner;
 
 public class Configuration {
@@ -40,16 +37,15 @@ public class Configuration {
 			Files.createFile(path);
 			return;
 		}
-		//FileReader reader = new FileReader(path.toString());
-		BufferedReader reader = Files.newBufferedReader(path, Charset.forName("UTF-8"));
-		if (reader.read()!=-1) {
-			reader = Files.newBufferedReader(path, Charset.forName("UTF-8"));
+		String data = new String(Files.readAllBytes(path));
+		if (!data.isEmpty()) {
 			JSONParser jsonParser = new JSONParser();
 			try {
-				Object data = jsonParser.parse(reader);
-				JSONArray entriesArray = (JSONArray) data;
-				entriesArray.forEach(entry -> set((JSONObject) entry));
-			} catch (IOException | ParseException exception) {
+				JSONObject entriesJSONObject = (JSONObject) jsonParser.parse(data);
+				for (Map.Entry entriesFromJSONObject : (Set<Map.Entry>) entriesJSONObject.entrySet()) {
+					set(entriesFromJSONObject.getKey().toString(), (String) entriesFromJSONObject.getValue());
+				}
+			} catch (ParseException exception) {
 				exception.printStackTrace();
 			}
 		}
@@ -75,15 +71,11 @@ public class Configuration {
 	 * @author André Sommer, Paul Leppich
 	 */
 	public void saveEntriesInFile() throws IOException {
-		JSONArray entriesArray = new JSONArray();
+		JSONObject entriesJSONObject = new JSONObject();
 		for (String entry : entries.keySet()) {
-			JSONObject entryObject = new JSONObject();
-			entryObject.put("key", entry);
-			entryObject.put("value", entries.get(entry));
-			entriesArray.add(entryObject);
+			entriesJSONObject.put(entry, entries.get(entry));
 		}
-		
-		Files.write(path, entriesArray.toJSONString().getBytes());
+		Files.write(path, entriesJSONObject.toJSONString().getBytes());
 	}
 	
 	/**
@@ -96,17 +88,6 @@ public class Configuration {
 	 */
 	public void set(String key, String value) {
 		entries.put(key, value);
-	}
-	
-	/**
-	 * Create a new entry or edit an existing entry in the list(HashMap) by using a json-object.<br><br>
-	 * <i>Erstellt einen neuen Eintrag oder ändert einen vorhandenen Eintrag in der Liste(HashMap) unter Nutzung eines json-Objketes.</i>
-	 * 
-	 * @param entry The new entry.<br><i>Der neue Eintrag.</i>
-	 * @author Paul Leppich
-	 */
-	private void set(JSONObject entry) {
-		entries.put((String) entry.get("key"), (String) entry.get("value"));
 	}
 	
 	/**
@@ -134,5 +115,4 @@ public class Configuration {
 	public HashMap<String, String> getAllEntries() {
 		return entries;
 	}
-
 }
